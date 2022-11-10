@@ -1,0 +1,860 @@
+  [1m[35m (2003.8ms)[0m  [1m[35mCREATE DATABASE "dev_db" ENCODING = 'utf8' TEMPLATE = "template0"[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (2157.3ms)[0m  [1m[35mCREATE DATABASE "test_db" ENCODING = 'utf8' TEMPLATE = "template0"[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (97.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (17.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to CreateArtists (20221109102425)
+  [1m[35m (3.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (34.8ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key, "agency" character varying, "nationality" character varying, "activity_name" character varying, "real_name" character varying, "sex" character varying, "genre" text, "nickname" text, "intro" text, "award_history" text, "link" text, "activity_type" text, "debut_day" timestamp, "birth_day" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20221109102425_create_artists.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (35.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221109102425"]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-11-09 10:40:44.995809"], ["updated_at", "2022-11-09 10:40:44.995809"]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Started GET "/?t=1667991063569" for 172.17.0.1 at 2022-11-09 10:51:04 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActiveRecord::ConnectionNotEstablished (No connection pool with 'primary' found.):
+  
+activerecord (5.2.8.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:1032:in `retrieve_connection'
+activerecord (5.2.8.1) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.8.1) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.8.1) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.4) lib/rack/proxy.rb:78:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for 172.17.0.1 at 2022-11-09 10:51:44 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActiveRecord::ConnectionNotEstablished (No connection pool with 'primary' found.):
+  
+activerecord (5.2.8.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:1032:in `retrieve_connection'
+activerecord (5.2.8.1) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.8.1) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.8.1) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.4) lib/rack/proxy.rb:78:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/?t=1667991243572" for 172.17.0.1 at 2022-11-09 10:54:04 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActiveRecord::ConnectionNotEstablished (No connection pool with 'primary' found.):
+  
+activerecord (5.2.8.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:1032:in `retrieve_connection'
+activerecord (5.2.8.1) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.8.1) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.8.1) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.8.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.4) lib/rack/proxy.rb:78:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/?t=1667991379846" for 172.17.0.1 at 2022-11-09 10:56:21 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by ArtistsController#index as HTML
+  Parameters: {"t"=>"1667991379846"}
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (4.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:15
+  Rendered artists/index.html.erb within layouts/application (25.1ms)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /workspace/melon_web/public/packs
+[Webpacker] Browserslist: caniuse-lite is outdated. Please run:
+npx browserslist@latest --update-db
+
+[Webpacker] Hash: 15d1bb7b54cf6326b9ba
+Version: webpack 4.43.0
+Time: 17893ms
+Built at: 2022-11-09 10:56:50 ├F10: AM┤
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-9afcbb5693aa87623e69.js    124 KiB  application  [emitted] [immutable]  application
+js/application-9afcbb5693aa87623e69.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-9afcbb5693aa87623e69.js js/application-9afcbb5693aa87623e69.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 28561ms (Views: 28532.8ms | ActiveRecord: 19.9ms)
+
+
+Started GET "/artists/new" for 172.17.0.1 at 2022-11-09 10:57:23 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (976.8ms)
+  Rendered artists/new.html.erb within layouts/application (978.4ms)
+Completed 500 Internal Server Error in 1075ms (ActiveRecord: 70.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `string_select' for #<ActionView::Helpers::FormBuilder:0x00007f698c165628>):
+    13: 
+    14:   <div class="field">
+    15:     <%= form.label :agency %>
+    16:     <%= form.string_select :agency %>
+    17:   </div>
+    18: 
+    19:   <div class="field">
+  
+app/views/artists/_form.html.erb:16:in `block in _app_views_artists__form_html_erb___4071727597386878278_70045649240580'
+app/views/artists/_form.html.erb:1:in `_app_views_artists__form_html_erb___4071727597386878278_70045649240580'
+app/views/artists/new.html.erb:3:in `_app_views_artists_new_html_erb__713062424719616260_70045649229580'
+Started GET "/artists/new" for 172.17.0.1 at 2022-11-09 10:59:27 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (535.9ms)
+  Rendered artists/new.html.erb within layouts/application (536.8ms)
+Completed 500 Internal Server Error in 539ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `string_field' for #<ActionView::Helpers::FormBuilder:0x00007f698d3daad8>):
+    13: 
+    14:   <div class="field">
+    15:     <%= form.label :agency %>
+    16:     <%= form.string_field :agency %>
+    17:   </div>
+    18: 
+    19:   <div class="field">
+  
+app/views/artists/_form.html.erb:16:in `block in _app_views_artists__form_html_erb___4071727597386878278_70045658883680'
+app/views/artists/_form.html.erb:1:in `_app_views_artists__form_html_erb___4071727597386878278_70045658883680'
+app/views/artists/new.html.erb:3:in `_app_views_artists_new_html_erb__713062424719616260_70045658848080'
+Started GET "/?t=1667992477215" for 172.17.0.1 at 2022-11-09 11:14:38 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by ArtistsController#index as HTML
+  Parameters: {"t"=>"1667992477215"}
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (2.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:15
+  Rendered artists/index.html.erb within layouts/application (9.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 115ms (Views: 98.6ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/artists/new" for 172.17.0.1 at 2022-11-09 11:14:39 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (91.1ms)
+  Rendered artists/new.html.erb within layouts/application (92.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 181ms (Views: 98.1ms | ActiveRecord: 67.0ms)
+
+
+Started GET "/artists/new" for 172.17.0.1 at 2022-11-09 11:20:35 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (887.8ms)
+  Rendered artists/new.html.erb within layouts/application (889.1ms)
+Completed 500 Internal Server Error in 892ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `소속사' for #<#<Class:0x000055cafa1770f8>:0x000055caf94ccd08>):
+    12:   <% end %>
+    13: 
+    14:   <div class="field">
+    15:     <%= form.label 소속사 %>
+    16:     <%= form.text_field :agency %>
+    17:   </div>
+    18: 
+  
+app/views/artists/_form.html.erb:15:in `block in _app_views_artists__form_html_erb__110324226311371370_47165128154920'
+app/views/artists/_form.html.erb:1:in `_app_views_artists__form_html_erb__110324226311371370_47165128154920'
+app/views/artists/new.html.erb:3:in `_app_views_artists_new_html_erb___1667656108482568099_47165127126460'
+Started GET "/artists/new" for 172.17.0.1 at 2022-11-09 11:21:33 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (10.7ms)
+  Rendered artists/new.html.erb within layouts/application (11.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 20.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?t=1667993237655" for 172.17.0.1 at 2022-11-09 11:27:19 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Processing by ArtistsController#index as HTML
+  Parameters: {"t"=>"1667993237655"}
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (2.7ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:15
+  Rendered artists/index.html.erb within layouts/application (9.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 175ms (Views: 163.1ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/artists/new" for 172.17.0.1 at 2022-11-09 11:27:22 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (84.3ms)
+  Rendered artists/new.html.erb within layouts/application (86.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 165ms (Views: 98.3ms | ActiveRecord: 51.8ms)
+
+
+Started GET "/artists/new" for 172.17.0.1 at 2022-11-09 11:34:25 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (201.1ms)
+  Rendered artists/new.html.erb within layouts/application (202.2ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 296ms (Views: 293.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/artists/new" for 172.17.0.1 at 2022-11-09 11:35:51 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (12.1ms)
+  Rendered artists/new.html.erb within layouts/application (13.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/artists/new" for 172.17.0.1 at 2022-11-09 11:40:03 +0000
+Cannot render console from 10.1.20.90! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (88.0ms)
+  Rendered artists/new.html.erb within layouts/application (88.8ms)
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for 1922:Integer):
+    74: 
+    75:   <div class="field">
+    76:     <%= form.label :birth_day %>
+    77:     <%= form.datetime_select :birth_day, Date.today.year-100 %>
+    78:   </div>
+    79: 
+    80:   <div class="actions">
+  
+app/views/artists/_form.html.erb:77:in `block in _app_views_artists__form_html_erb___428772405105977137_70145644212120'
+app/views/artists/_form.html.erb:1:in `_app_views_artists__form_html_erb___428772405105977137_70145644212120'
+app/views/artists/new.html.erb:3:in `_app_views_artists_new_html_erb__1536309236738474132_70145644127080'
+Started GET "/artists/new" for 172.17.0.1 at 2022-11-09 11:43:18 +0000
+Cannot render console from 10.1.20.90! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (1.4ms)
+  Rendered artists/new.html.erb within layouts/application (70.2ms)
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/workspace/melon_web/app/views/artists/_form.html.erb:77: syntax error, unexpected ';', expecting '}'
+...irth_day, {:discard_day=> true; start_year=>1900});@output_b...
+...                              ^
+/workspace/melon_web/app/views/artists/_form.html.erb:83: syntax error, unexpected end, expecting ')'
+'.freeze; end 
+          ^~~
+/workspace/melon_web/app/views/artists/_form.html.erb:85: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/workspace/melon_web/app/views/artists/_form.html.erb:87: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/artists/_form.html.erb:77: syntax error, unexpected ';', expecting '}'
+app/views/artists/_form.html.erb:83: syntax error, unexpected end, expecting ')'
+app/views/artists/_form.html.erb:85: syntax error, unexpected ensure, expecting ')'
+app/views/artists/_form.html.erb:87: syntax error, unexpected end, expecting ')'
+app/views/artists/new.html.erb:3:in `_app_views_artists_new_html_erb__1536309236738474132_70145648649940'
+Started GET "/artists/new" for 172.17.0.1 at 2022-11-09 11:43:35 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (41.0ms)
+  Rendered artists/new.html.erb within layouts/application (41.8ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/workspace/melon_web/app/views/artists/_form.html.erb:77: syntax error, unexpected ';', expecting '}'
+...birth_day,{:discard_day=> true; start_year=>1900});@output_b...
+...                              ^
+/workspace/melon_web/app/views/artists/_form.html.erb:83: syntax error, unexpected end, expecting ')'
+'.freeze; end 
+          ^~~
+/workspace/melon_web/app/views/artists/_form.html.erb:85: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/workspace/melon_web/app/views/artists/_form.html.erb:87: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/artists/_form.html.erb:77: syntax error, unexpected ';', expecting '}'
+app/views/artists/_form.html.erb:83: syntax error, unexpected end, expecting ')'
+app/views/artists/_form.html.erb:85: syntax error, unexpected ensure, expecting ')'
+app/views/artists/_form.html.erb:87: syntax error, unexpected end, expecting ')'
+app/views/artists/new.html.erb:3:in `_app_views_artists_new_html_erb__1536309236738474132_70145645911800'
+Started GET "/artists/new" for 172.17.0.1 at 2022-11-09 11:43:59 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (0.9ms)
+  Rendered artists/new.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/workspace/melon_web/app/views/artists/_form.html.erb:77: syntax error, unexpected ';', expecting '}'
+...birth_day,{:discard_day=> true; :start_year=>1900});@output_...
+...                              ^
+/workspace/melon_web/app/views/artists/_form.html.erb:83: syntax error, unexpected end, expecting ')'
+'.freeze; end 
+          ^~~
+/workspace/melon_web/app/views/artists/_form.html.erb:85: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/workspace/melon_web/app/views/artists/_form.html.erb:87: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/artists/_form.html.erb:77: syntax error, unexpected ';', expecting '}'
+app/views/artists/_form.html.erb:83: syntax error, unexpected end, expecting ')'
+app/views/artists/_form.html.erb:85: syntax error, unexpected ensure, expecting ')'
+app/views/artists/_form.html.erb:87: syntax error, unexpected end, expecting ')'
+app/views/artists/new.html.erb:3:in `_app_views_artists_new_html_erb__1536309236738474132_46928709664440'
+Started GET "/artists/new" for 172.17.0.1 at 2022-11-09 11:44:16 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (1.5ms)
+  Rendered artists/new.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/workspace/melon_web/app/views/artists/_form.html.erb:77: syntax error, unexpected ';', expecting '}'
+...birth_day,{:discard_day=> true; :start_year=>1900});@output_...
+...                              ^
+/workspace/melon_web/app/views/artists/_form.html.erb:83: syntax error, unexpected end, expecting ')'
+'.freeze; end 
+          ^~~
+/workspace/melon_web/app/views/artists/_form.html.erb:85: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/workspace/melon_web/app/views/artists/_form.html.erb:87: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/artists/_form.html.erb:77: syntax error, unexpected ';', expecting '}'
+app/views/artists/_form.html.erb:83: syntax error, unexpected end, expecting ')'
+app/views/artists/_form.html.erb:85: syntax error, unexpected ensure, expecting ')'
+app/views/artists/_form.html.erb:87: syntax error, unexpected end, expecting ')'
+app/views/artists/new.html.erb:3:in `_app_views_artists_new_html_erb__1536309236738474132_70145648403520'
+Started GET "/artists/new" for 172.17.0.1 at 2022-11-09 11:44:45 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (1.0ms)
+  Rendered artists/new.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/workspace/melon_web/app/views/artists/_form.html.erb:77: syntax error, unexpected ';', expecting '}'
+...irth_day,{:discard_day => true; :start_year =>1900});@output...
+...                              ^
+/workspace/melon_web/app/views/artists/_form.html.erb:83: syntax error, unexpected end, expecting ')'
+'.freeze; end 
+          ^~~
+/workspace/melon_web/app/views/artists/_form.html.erb:85: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/workspace/melon_web/app/views/artists/_form.html.erb:87: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/artists/_form.html.erb:77: syntax error, unexpected ';', expecting '}'
+app/views/artists/_form.html.erb:83: syntax error, unexpected end, expecting ')'
+app/views/artists/_form.html.erb:85: syntax error, unexpected ensure, expecting ')'
+app/views/artists/_form.html.erb:87: syntax error, unexpected end, expecting ')'
+app/views/artists/new.html.erb:3:in `_app_views_artists_new_html_erb__1536309236738474132_70145646282240'
+Started GET "/artists/new" for 172.17.0.1 at 2022-11-09 11:49:51 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (0.9ms)
+  Rendered artists/new.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/workspace/melon_web/app/views/artists/_form.html.erb:77: syntax error, unexpected ';', expecting '}'
+...irth_day,{:discard_day => true; :start_year =>1900});@output...
+...                              ^
+/workspace/melon_web/app/views/artists/_form.html.erb:83: syntax error, unexpected end, expecting ')'
+'.freeze; end 
+          ^~~
+/workspace/melon_web/app/views/artists/_form.html.erb:85: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/workspace/melon_web/app/views/artists/_form.html.erb:87: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/artists/_form.html.erb:77: syntax error, unexpected ';', expecting '}'
+app/views/artists/_form.html.erb:83: syntax error, unexpected end, expecting ')'
+app/views/artists/_form.html.erb:85: syntax error, unexpected ensure, expecting ')'
+app/views/artists/_form.html.erb:87: syntax error, unexpected end, expecting ')'
+app/views/artists/new.html.erb:3:in `_app_views_artists_new_html_erb__1536309236738474132_70145643790220'
+Started GET "/artists/new" for 172.17.0.1 at 2022-11-09 11:49:56 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (1.2ms)
+  Rendered artists/new.html.erb within layouts/application (58.2ms)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/workspace/melon_web/app/views/artists/_form.html.erb:77: syntax error, unexpected ';', expecting '}'
+...ptions = {:discard_day => true; :start_year =>1900});@output...
+...                              ^
+/workspace/melon_web/app/views/artists/_form.html.erb:83: syntax error, unexpected end, expecting ')'
+'.freeze; end 
+          ^~~
+/workspace/melon_web/app/views/artists/_form.html.erb:85: syntax error, unexpected ensure, expecting ')'
+          ensure
+          ^~~~~~
+/workspace/melon_web/app/views/artists/_form.html.erb:87: syntax error, unexpected end, expecting ')'
+          end
+          ^~~):
+  
+app/views/artists/_form.html.erb:77: syntax error, unexpected ';', expecting '}'
+app/views/artists/_form.html.erb:83: syntax error, unexpected end, expecting ')'
+app/views/artists/_form.html.erb:85: syntax error, unexpected ensure, expecting ')'
+app/views/artists/_form.html.erb:87: syntax error, unexpected end, expecting ')'
+app/views/artists/new.html.erb:3:in `_app_views_artists_new_html_erb__1536309236738474132_46928709801280'
+Started GET "/artists/new" for 172.17.0.1 at 2022-11-09 11:52:26 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (88.9ms)
+  Rendered artists/new.html.erb within layouts/application (89.7ms)
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for "written_on":String):
+    74: 
+    75:   <div class="field">
+    76:     <%= form.label :birth_day %>
+    77:     <%= form.datetime_select(:birth_day, "written_on")%>
+    78:   </div>
+    79: 
+    80:   <div class="actions">
+  
+app/views/artists/_form.html.erb:77:in `block in _app_views_artists__form_html_erb___428772405105977137_46928709713220'
+app/views/artists/_form.html.erb:1:in `_app_views_artists__form_html_erb___428772405105977137_46928709713220'
+app/views/artists/new.html.erb:3:in `_app_views_artists_new_html_erb__1536309236738474132_46928709640540'
+Started GET "/artists/new" for 172.17.0.1 at 2022-11-09 11:52:56 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (12.7ms)
+  Rendered artists/new.html.erb within layouts/application (13.6ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for "written_on":String):
+    74: 
+    75:   <div class="field">
+    76:     <%= form.label :birth_day %>
+    77:     <%= form.datetime_select :birth_day, "written_on" %>
+    78:   </div>
+    79: 
+    80:   <div class="actions">
+  
+app/views/artists/_form.html.erb:77:in `block in _app_views_artists__form_html_erb___428772405105977137_46928710703260'
+app/views/artists/_form.html.erb:1:in `_app_views_artists__form_html_erb___428772405105977137_46928710703260'
+app/views/artists/new.html.erb:3:in `_app_views_artists_new_html_erb__1536309236738474132_70145775013160'
+Started GET "/artists/new" for 172.17.0.1 at 2022-11-09 11:53:28 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (14.0ms)
+  Rendered artists/new.html.erb within layouts/application (14.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/artists/new" for 172.17.0.1 at 2022-11-09 11:54:13 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (81.6ms)
+  Rendered artists/new.html.erb within layouts/application (82.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 89ms (Views: 87.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/artists/new" for 172.17.0.1 at 2022-11-09 11:54:40 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (40.8ms)
+  Rendered artists/new.html.erb within layouts/application (42.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 51ms (Views: 49.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?t=1667991379846" for 172.17.0.1 at 2022-11-09 11:55:21 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#index as HTML
+  Parameters: {"t"=>"1667991379846"}
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:15
+  Rendered artists/index.html.erb within layouts/application (2.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/artists/new" for 172.17.0.1 at 2022-11-09 11:55:23 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  Rendered artists/_form.html.erb (12.2ms)
+  Rendered artists/new.html.erb within layouts/application (13.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 100ms (Views: 98.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/artists" for 172.17.0.1 at 2022-11-09 12:03:29 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"68zTExH8L0m0FYz892OlOfRL5+97S/Kqs6K09QwvoNWyHX5CZ2Eqe4+tfgClWTZHLqQC8Ctv7DFMy/v1AGDOyQ==", "artist"=>{"agency"=>"C9엔터테인먼트", "nationality"=>"대한민국", "activity_name"=>"윤하 (YOUNHA)", "real_name"=>"고윤하", "sex"=>"여성", "nickname"=>"햇병아리, 깡순이, 오리콘 혜성", "intro"=>"윤하는 대한민국의 싱어송라이터이다. 2004년, 첫 싱글 'ゆびきり'로 일본에서의 활동을 시작했고 이듬해 발표한 두 번째 싱글 'ほうき星(혜성)'이 일본 애니메이션 \"블리치\" 3기의 엔딩곡으로 사용되며 오리콘 주간 차트 15위에 오르는 성과를 거두었다. 일본에서의 성공적인 활동은 국내 데뷔를 이끌었고 2006년 첫 디지털 싱글 'Audition'을 발매하며 국내 주요 아티스트로 거듭났다. 이듬해 첫 정규앨범 [고백하기 좋은 날]을 공개, 타이틀곡 '비밀번호 486'이 대중의 공감을 자아내면서 가창력과 음악적 능력을 인정받았고 그 해 각종 신인상을 거머쥐었다.\r\n \r\n이후 발표한 2집 [Someday]는 연인의 사랑을 확인하고 싶어 하는 마음을 담은 '텔레파시'로 확고한 팬층을 만들어냈고 토이의 '오늘 서울은 하루종일 맑음'과 에픽 하이의 '우산'에 참여해 감성적인 보컬로 곡을 히트시키는 데 기여했다. 2009년에는 3번째 정규작 [Growing Season]으로 컴백해 애절한 발라드 넘버 '오늘 헤어졌어요'를 선보였으며, 일본과 국내에서의 왕성한 활동을 이어나갔다.\r\n \r\n2017년 말, 5년 5개월 만에 선보인 다섯 번째 정규 앨범 [RescuE]로 서른 살의 감성을 전했으며, 싱글 '느린 우체통', '비가 내리는 날에는' 등의 곡을 발표하기도 했다. 2019년 여름 네 번째 미니앨범 [STABLE MINDSET]을 발표해 독보적인 윤하 표 발라드로 리스너들의 마음을 두드렸고, 이듬해 1월, 성장에 대한 이야기를 담아낸 [UNSTABLE MINDSET]을 발매했다. 이후 2021년 11월, 정규 6집 [YOUNHA 6th Album 'END THEORY']로 다양한 끝에 대한 이야기들을 가장 윤하 다운 음악으로 풀어냈다.", "award_history"=>"제6회 한국대중음악상|네티즌이 뽑은 올해의 음악인 (여자 아티스트)\r\n제6회 한국대중음악상|네티즌이 뽑은 올해의 음악인 (팝)\r\n제5회 한국대중음악상|올해의 신인제5회 한국대중음악상|네티즌이 뽑은 올해의 음악인 (팝)\r\n2007 Mnet Asian Music Awards|솔로 신인상\r\n2007 골든디스크 어워즈|Anycall 신인상", "link"=>"https://cdnimg.melon.co.kr/cm2/artistcrop/images/002/03/912/203912_20220330112405_500.jpg?cc9cde077e72ffa2bf2dc946503d989d/melon/resize/416/quality/80/optimize", "genre"=>"발라드, 록/메탈, 국내드라마, R&B/Soul, 댄스, 랩/힙합, 포크/블루스, 애니메이션/웹툰, 게임, 키즈, 만화", "activity_type"=>"솔로", "debut_day(1i)"=>"2004", "debut_day(2i)"=>"9", "debut_day(3i)"=>"1", "debut_day(4i)"=>"00", "debut_day(5i)"=>"00", "birth_day(1i)"=>"1988", "birth_day(2i)"=>"4", "birth_day(3i)"=>"29", "birth_day(4i)"=>"11", "birth_day(5i)"=>"55"}, "commit"=>"Create Artist"}
+Unpermitted parameters: :agency, :nationality, :activity_name, :real_name, :sex, :nickname, :intro, :award_history, :link, :genre, :activity_type
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/artists_controller.rb:27
+  [1m[36mArtist Create (2.6ms)[0m  [1m[32mINSERT INTO "artists" ("debut_day", "birth_day", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["debut_day", "2004-09-01 00:00:00"], ["birth_day", "1988-04-29 11:55:00"], ["created_at", "2022-11-09 12:03:29.626120"], ["updated_at", "2022-11-09 12:03:29.626120"]]
+  ↳ app/controllers/artists_controller.rb:27
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/artists_controller.rb:27
+Redirected to http://melon-web-aqjiz.run.goorm.io/artists/1
+Completed 302 Found in 10ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/artists/1" for 172.17.0.1 at 2022-11-09 12:03:29 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:63
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (0.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 11.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/artists" for 172.17.0.1 at 2022-11-09 12:03:33 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (45.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:15
+  Rendered artists/index.html.erb within layouts/application (46.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 53ms (Views: 6.6ms | ActiveRecord: 45.1ms)
+
+
+Started GET "/artists/1" for 172.17.0.1 at 2022-11-09 12:03:47 +0000
+Cannot render console from 10.1.20.90! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:63
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (1.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/artists/1" for 172.17.0.1 at 2022-11-09 12:08:47 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:63
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (0.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 96ms (Views: 93.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/artists" for 172.17.0.1 at 2022-11-09 12:08:57 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:15
+  Rendered artists/index.html.erb within layouts/application (2.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/artists/1" for 172.17.0.1 at 2022-11-09 12:08:59 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:63
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (0.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 5.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/artists/1" for 172.17.0.1 at 2022-11-09 12:09:27 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:63
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (0.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 81ms (Views: 79.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?t=1667993237655" for 172.17.0.1 at 2022-11-09 12:13:36 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#index as HTML
+  Parameters: {"t"=>"1667993237655"}
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:15
+  Rendered artists/index.html.erb within layouts/application (2.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/artists/1" for 172.17.0.1 at 2022-11-09 12:13:39 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:63
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (0.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/artists/1" for 172.17.0.1 at 2022-11-09 12:20:54 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:64
+Completed 500 Internal Server Error in 606ms (ActiveRecord: 5.7ms)
+
+
+  
+NameError (undefined local variable or method `artist' for #<ArtistsController:0x00007f981cb76e00>
+Did you mean?  @artist):
+  
+app/controllers/artists_controller.rb:11:in `show'
+Started GET "/artists/1" for 172.17.0.1 at 2022-11-09 12:21:56 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:64
+Completed 500 Internal Server Error in 524ms (ActiveRecord: 3.6ms)
+
+
+  
+NameError (undefined local variable or method `artist' for #<ArtistsController:0x00007f981c6177e8>
+Did you mean?  @artist):
+  
+app/controllers/artists_controller.rb:11:in `show'
+Started GET "/" for 172.17.0.1 at 2022-11-09 12:22:31 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:15
+  Rendered artists/index.html.erb within layouts/application (2.2ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/artists/1" for 172.17.0.1 at 2022-11-09 12:22:33 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:64
+Completed 500 Internal Server Error in 583ms (ActiveRecord: 0.4ms)
+
+
+  
+NameError (undefined local variable or method `artist' for #<ArtistsController:0x0000555ce17f5fd8>
+Did you mean?  @artist):
+  
+app/controllers/artists_controller.rb:11:in `show'
+Started GET "/artists/1" for 172.17.0.1 at 2022-11-09 12:23:04 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:64
+Completed 500 Internal Server Error in 593ms (ActiveRecord: 3.7ms)
+
+
+  
+NameError (undefined local variable or method `id' for #<ArtistsController:0x0000555ce227c178>):
+  
+app/controllers/artists_controller.rb:11:in `show'
+Started GET "/" for 172.17.0.1 at 2022-11-09 12:28:13 +0000
+Cannot render console from 10.1.20.90! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:15
+  Rendered artists/index.html.erb within layouts/application (2.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/?t=1667997198888" for 172.17.0.1 at 2022-11-09 12:33:19 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArtistsController#index as HTML
+  Parameters: {"t"=>"1667997198888"}
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/artists/index.html.erb:15
+  Rendered artists/index.html.erb within layouts/application (91.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 101ms (Views: 91.6ms | ActiveRecord: 6.4ms)
+
+
