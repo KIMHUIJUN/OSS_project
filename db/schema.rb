@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_09_102425) do
+ActiveRecord::Schema.define(version: 2022_11_12_115612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "albums", force: :cascade do |t|
+    t.string "title"
+    t.string "release_com"
+    t.string "activity_type"
+    t.string "release_day"
+    t.text "genre"
+    t.text "intro"
+    t.integer "recommend"
+    t.bigint "artist_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "album_link"
+    t.index ["artist_id"], name: "index_albums_on_artist_id"
+  end
 
   create_table "artists", force: :cascade do |t|
     t.string "agency"
@@ -27,10 +42,25 @@ ActiveRecord::Schema.define(version: 2022_11_09_102425) do
     t.text "award_history"
     t.text "link"
     t.text "activity_type"
-    t.datetime "debut_day"
-    t.datetime "birth_day"
+    t.string "debut_day"
+    t.string "birth_day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "tracks", force: :cascade do |t|
+    t.string "title"
+    t.integer "recommend"
+    t.string "flac"
+    t.string "genre"
+    t.text "lyrics"
+    t.bigint "album_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "track_play"
+    t.index ["album_id"], name: "index_tracks_on_album_id"
+  end
+
+  add_foreign_key "albums", "artists"
+  add_foreign_key "tracks", "albums"
 end

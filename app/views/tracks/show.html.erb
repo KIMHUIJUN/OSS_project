@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @track.title %>
+</p>
+
+<p>
+  <strong>Recommend:</strong>
+  <%= @track.recommend %>
+</p>
+
+<p>
+  <strong>Flac:</strong>
+  <%= @track.flac %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @track.genre %>
+</p>
+
+<p>
+  <strong>Lyrics:</strong>
+  <%= @track.lyrics %>
+</p>
+<p>
+  <strong>Album:</strong>
+  <%= @track.album.artist.activity_name %>
+</p>
+<p>
+  <strong>Album:</strong>
+  <%= @track.album.title %>
+</p>
+<%= audio_tag @track.track_play,controls: "controls"%>
+<%= link_to 'Edit', edit_track_path(@track) %> |
+<%= link_to 'Back', tracks_path %>

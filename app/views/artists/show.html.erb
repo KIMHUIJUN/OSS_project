@@ -10,9 +10,14 @@
   <%= @artist.birth_day %>
 </p>
 <p>
-	<strong>Birth day:</strong>
+	<strong>intro:</strong>
 	<%= @artist.intro %>
 </p>
+<a>
+	<img src="<%= @artist.link %>" >
+	
+</a>
 
+<br>
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <%= link_to 'Back', artists_path %>
