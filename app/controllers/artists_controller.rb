@@ -7,8 +7,8 @@ class ArtistsController < ApplicationController
   end
 
   # GET /artists/1 or /artists/1.json
-  def show
-	  
+  def show 
+	  @albums = Album.where(artist_id: @artist.id)
   end
 
   # GET /artists/new

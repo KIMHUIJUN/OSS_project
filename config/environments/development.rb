@@ -4,7 +4,7 @@ Rails.application.configure do
   rescue
   end
   # Settings specified here will take precedence over those in config/application.rb.
-
+  ENV['KAKAO_CLIENT_ID'] = "edb007496140231bc550ba5d4502c2e5"
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.

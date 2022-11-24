@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_12_115612) do
+ActiveRecord::Schema.define(version: 2022_11_23_064512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,19 @@ ActiveRecord::Schema.define(version: 2022_11_12_115612) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "social_auths", force: :cascade do |t|
+    t.string "provider", null: false
+    t.string "uid", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "photo"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_social_auths_on_user_id"
+  end
+
   create_table "tracks", force: :cascade do |t|
     t.string "title"
     t.integer "recommend"
@@ -61,6 +74,23 @@ ActiveRecord::Schema.define(version: 2022_11_12_115612) do
     t.index ["album_id"], name: "index_tracks_on_album_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "videos", force: :cascade do |t|
+    t.text "src"
+    t.text "intro"
+    t.bigint "track_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["track_id"], name: "index_videos_on_track_id"
+  end
+
   add_foreign_key "albums", "artists"
   add_foreign_key "tracks", "albums"
+  add_foreign_key "videos", "tracks"
 end

@@ -4,6 +4,10 @@
   <strong>Title:</strong>
   <%= @track.title %>
 </p>
+<p>
+  <strong>ID:</strong>
+  <%= @track.id %>
+</p>
 
 <p>
   <strong>Recommend:</strong>
@@ -25,13 +29,14 @@
   <%= @track.lyrics %>
 </p>
 <p>
-  <strong>Album:</strong>
-  <%= @track.album.artist.activity_name %>
+  <strong>Artist:</strong>
+  <%=link_to @track.album.artist.activity_name, artist_path(@track.album.artist.id) %>
 </p>
 <p>
   <strong>Album:</strong>
-  <%= @track.album.title %>
+  <%= link_to @track.album.title, album_path(@track.album.id) %>
 </p>
-<%= audio_tag @track.track_play,controls: "controls"%>
+<%= audio_tag @track.track_play, controls: "controls"%>
+
 <%= link_to 'Edit', edit_track_path(@track) %> |
 <%= link_to 'Back', tracks_path %>

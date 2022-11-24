@@ -25,9 +25,12 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+#카카오톡 로그인 연동
+gem 'omniauth-kakao', git: "https://github.com/DevStarSJ/omniauth-kakao"
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -56,3 +59,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'omniauth-oauth2', '~> 1.7.0'
+gem 'omniauth'
+gem "omniauth-rails_csrf_protection"
