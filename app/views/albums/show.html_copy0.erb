@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @album.title %>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Recommend</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tracks.each do |track| %>
+      <tr>
+        <td><%= link_to track.title, track_path(track.id) %></td>
+        <td><%= track.recommend %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+</p>
+
+<p>
+  <strong>Artist:</strong>
+  <%=link_to @album.artist.real_name, artist_path(@album.artist.id)%>
+</p>
+
+<p>
+  <strong>release_com:</strong>
+  <%= @album.release_com %>
+</p>
+<p>
+  <strong>release_com:</strong>
+  <%= @album.recommend%>
+</p>
+<p>
+  <strong>album.id:</strong>
+  <%= @album.id%>
+</p>
+
+<img src= <%=@album.album_link%>/>
+<br>
+
+<br>
+<%= link_to 'Edit', edit_album_path(@album) %> |
+<%= link_to 'Back', albums_path %>
