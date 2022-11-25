@@ -9,7 +9,7 @@ Rails.application.configure do
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
-
+  ENV['KAKAO_CLIENT_ID'] = "edb007496140231bc550ba5d4502c2e5"
   # Do not eager load code on boot.
   config.eager_load = false
 
@@ -59,8 +59,14 @@ Rails.application.configure do
 
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
-
+	
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+	
+  #이 옵션은 devise 젬을 이용할 경우 회원가입시 안내 이메일을 보낼 때 필요한 것이다.
+  config.action_mailer.default_url_options = { host: 'https://oss-project-tlada.run.goorm.io' }	
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.perform_deliveries = true
+	
 end
