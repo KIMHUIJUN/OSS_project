@@ -12,7 +12,7 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
-
+  config.webpacker.check_yarn_integrity = false
   # Show full error reports.
   config.consider_all_requests_local = true
 
@@ -63,4 +63,10 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+	
+#이 옵션은 devise 젬을 이용할 경우 회원가입시 안내 이메일을 보낼 때 필요한 것이다
+  config.action_mailer.default_url_options = { host: 'https://oss-project-ysixf.run.goorm.io' } 
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.perform_deliveries = true
+
 end

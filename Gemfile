@@ -6,11 +6,21 @@ ruby '2.6.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4'
 
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-kakao', :git => 'https://github.com/hcn1519/omniauth-kakao'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3', '~> 1.4'
 # change Use postgresql as the database for Active Record
 gem 'pg'
-
+gem 'rolify'     # role 관리
+gem 'authority'  # 권한설정
+# 개발 모드에서 이메일을 보내않고 브라우저에서 미리보기한는 젬
+gem 'letter_opener', group: :development
+# 페이지 뷰를 깔끔하게 보이도록 하기 위해서 아래의 두 젬을 추가로 설치한다.
+gem 'bootstrap-sass'
+gem 'simple_form'
+gem 'figaro'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
