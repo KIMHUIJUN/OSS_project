@@ -3,6 +3,12 @@
   <html lang="ko">
 	
 	<head>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>Melon::음악이 필요한 순간, 멜론</title>
@@ -23,162 +29,14 @@
 	<script type="text/javascript" src="https://member.melon.com/resource/script/web/member/melonweb_member_external.js?tm=20221125"></script>
 	<script type="text/javascript" src="/resource/script/cds/common/web/member_api.js"></script>
 	<script type="text/javascript" src="/resource/script/cds/common/web/commerce_api.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,800;1,400;1,800&family=Square+Peg&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnimg.melon.co.kr/static/web/resource/style/w1/av/i/qrguc73w.css" type="text/css">
 	<link rel="stylesheet" href="https://cdnimg.melon.co.kr/static/web/resource/style/w1/ri/4/rw98ltzfrqdnf.css" type="text/css">
 
 	<link rel="stylesheet" href="https://cdnimg.melon.co.kr/static/web/resource/style/w1/r7/7/82sh71zyawnpq7.css" type="text/css">
-		<script type="text/javascript">
-	(function() {
-		WEBPOCIMG = {
-			defaultImg : function(obj, width){
-				if(width == null || width == '') width = $(obj).width();
-				if(width == 0) width = 500;
-				var thumbType = "_500";
-				//가장 큰사이즈로 리사이즈함
-				var thumbType = "_500";
-				var defaultImg = "//cdnimg.melon.co.kr/resource/image/web/default/noAlbum" + thumbType + "_160727.jpg/melon/resize/" + width;
-				if(obj.src != defaultImg){
-					obj.src = defaultImg;
-				}
-			},
-
-			defaultAlbumImg : function(obj, width){
-				if(width == null || width == '') width = $(obj).width();
-				if(width == 0) width = 500;
-				//가장 큰사이즈로 리사이즈함
-				var thumbType = "_500";
-				var defaultImg = "//cdnimg.melon.co.kr/resource/image/web/default/noAlbum" + thumbType + "_160727.jpg/melon/resize/" + width;
-				if(obj.src != defaultImg){
-					obj.src = defaultImg;
-				}
-			},
-
-			defaultArtistImg : function(obj, width){
-				if(width == null || width == '') width = $(obj).width();
-				if(width == 0) width = 300;
-				//가장 큰사이즈로 리사이즈함
-				var thumbType = "_300";
-				var defaultImg = "//cdnimg.melon.co.kr/resource/image/web/default/noArtist" + thumbType + "_160727.jpg/melon/resize/" + width;
-				if(obj.src != defaultImg){
-					obj.src = defaultImg;
-				}
-			},
-			defaultDjImg : function(obj){
-			},
-			defaultMvImg : function(obj, width, height){
-				if(width == null || width == '') width = $(obj).width();
-				if(height == null || height == '') height = $(obj).height();
-
-				var ratio43 = Math.floor((4/3)*10)/10;
-				var ratio169 = Math.floor((16/9)*10)/10;
-				var ratioObj = Math.floor((width/height)*10)/10;
-
-				var ratio = "4x3";
-				if(ratioObj == ratio43){
-					ratio = "4x3"; //contentsType = "mv43";
-				} else if(ratioObj == ratio169){
-					ratio = "16x9"; //contentsType = "mv169";
-				} else {
-					if(ratioObj > 1.5) ratio = "16x9";
-					else ratio = "4x3";
-				}
-
-				if(width == 0) width = 640;
-				if(height == 0) ratio = "16x9";
-
-				//가장 큰사이즈로 리사이즈함
-				var thumbType = "_" + ratio + "_640";
-				var defaultImg = "//cdnimg.melon.co.kr/resource/image/web/default/noMovie" + thumbType + "_160727.jpg/melon/resize/" + width;
-				if(obj.src != defaultImg){
-					obj.src = defaultImg;
-				}
-			},
-			defaultPlaylistImg : function(obj, width){
-				if(width == null || width == '') width = $(obj).width();
-				if(width == 0) width = 500;
-				//가장 큰사이즈로 리사이즈함
-				var thumbType = "_500";
-				var defaultImg = "//cdnimg.melon.co.kr/resource/image/web/default/noAlbum" + thumbType + "_160727.jpg/melon/resize/" + width;
-				if(obj.src != defaultImg){
-					obj.src = defaultImg;
-				}
-			},
-			defaultMemberImg : function(obj, width){
-				if(width == null || width == '') width = $(obj).width();
-				if(width == 0) width = 300;
-				//가장 큰사이즈로 리사이즈함
-				var thumbType = "_300";
-				var defaultImg = "//cdnimg.melon.co.kr/resource/image/web/default/noArtist" + thumbType + "_160727.jpg/melon/resize/" + width;
-				if(obj.src != defaultImg){
-					obj.src = defaultImg;
-				}
-			},
-			defaultPhotoImg : function(obj, width){
-				if(width == null || width == '') width = $(obj).width();
-				if(width == 0) width = 500;
-				//가장 큰사이즈로 리사이즈함
-				var thumbType = "_500";
-				var defaultImg = "//cdnimg.melon.co.kr/resource/image/web/default/noAlbum" + thumbType + "_160727.jpg/melon/resize/" + width;
-				if(obj.src != defaultImg){
-					obj.src = defaultImg;
-				}
-			},
-			defaultShopImg : function(obj, width){
-				if(width == null || width == '') width = $(obj).width();
-				if(width == 0) width = 256;
-				//가장 큰사이즈로 리사이즈함
-				var thumbType = "_256";
-				var defaultImg = "//cdnimg.melon.co.kr/resource/image/web/default/noProduct" + thumbType + "_160727.jpg/melon/resize/" + width;
-				if(obj.src != defaultImg){
-					obj.src = defaultImg;
-				}
-			},
-			defaultShowwingImg : function(obj, width){
-				if(width == null || width == '') width = $(obj).width();
-
-				var thumbType = "_256";
-				if(width > 0 && width <= 300){
-					thumbType = "_256";
-				} else {
-					thumbType = "_313";//추후 조절값
-				}
-				altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noShowing" + thumbType + ".jpg";
-				if(obj.src != altSrc){
-					obj.src = altSrc;
-				}
-			},
-			defaultTicketImg : function(obj, width){
-				if(width == null || width == '') width = $(obj).width();
-
-				var thumbType = "_256";
-				if(width > 0 && width <= 300){
-					thumbType = "_256";
-				} else {
-					thumbType = "_313";//추후 조절값
-				}
-				altSrc = "//cdnimg.melon.co.kr/resource/image/web/default/noTicket" + thumbType + ".png";
-				if(obj.src != altSrc){
-					obj.src = altSrc;
-				}
-			}
-		}
-		,WEBELLIPSIS = {
-			ellipsis : function(ellipsisName,moreClassName,eWidth){
-		        //아티스트 더보기
-		        var arObj = $('.' + ellipsisName);
-		        for(var i = 0; i < arObj.length; i++){
-		            if (arObj.eq(i).width() > eWidth ){
-		                arObj.eq(i).parent().parent().parent().find('.' + moreClassName).css("display","");
-		            }
-		        }
-			}
-		}
-
-		if(isMelonLogin() && getCookie("CHECK_POP") == 'Y'){
-			window.open('https://www.melon.com/error_page/popup_check.html','mainCheckPopup','scrollbars=no, resizable=no, location=no, width=50, height=50, left=10000, top=10000');
-		}
-	})();
-	</script>
+	
 	</head>
 <header class="">
 <div id="wrap">  <!-- 이벤트일 경우 event_gnb 추가 -->
@@ -213,74 +71,7 @@
 							
 							<li class="last_child"><a href="/customer/announce/index.htm" title="공지사항" class="menu04 mlog" data="LOG_PRT_CODE=1&amp;MENU_PRT_CODE=0&amp;MENU_ID_LV1=&amp;CLICK_AREA_PRT_CODE=V02&amp;ACTION_AF_CLICK=V1"><span>공지사항</span></a></li>
 						</ul>
-						<script type="text/javascript">
-							var html = '';
-							var logoutReturnUrl = window.location.href;
-
-							if(logoutReturnUrl == ''){
-								logoutReturnUrl = 'www.melon.com';
-							}
-
-							if(isMelonLogin()){
-
-								var memberKey = getMemberKey()
-								var memberInfo = svcMember.displayIdByMemberKey(memberKey);
-								var memberType = svcMember.getMemberType().MEMBERTYPE;
-								var gradeInfo = svcMember.gradeInfoByMemberKey(memberKey);
-
-								var memId = '';
-								if(memberType == undefined || memberType == null){
-									memberType = '0';
-								}
-
-								if(memberInfo.DISPLAYID != undefined || memberInfo.DISPLAYID != null){
-									memId = memberInfo.DISPLAYID;
-								}
-
-								if(memId.indexOf("@") != -1 && memberType != '1'){//카카오계정이 아닌경우에만 @도메인 영역 삭제처리
-									memId = memId.split("@")[0];
-								}
-
-								var fromMPS = getCookie("MPS"); // 멜론 플레이어에서 왔는지 확인.
-								var fromMPSYn = fromMPS == null || fromMPS.indexOf("MELONPLAYER") < 0;
-
-								var gradeImg = "";
-								var gradeName = gradeInfo.GRADE;
-								var gradeImageUrl = gradeInfo.HTTPSIMAGEURL;
-
-								if(gradeName == undefined || gradeName == null){
-									gradeName = '일반';
-								}
-
-								try {
-									gradeImageUrl = gradeImageUrl.replace('http:','');
-
-									if(gradeName == '일반'){
-										gradeImageUrl = "";
-									}
-
-									if(gradeImageUrl != ''){
-										gradeImg = "<span class=\"icon_logon\"><img src=\""+gradeImageUrl+"\" width=\"18\" height=\"18\" alt=\""+gradeName+"\" /></span>";
-									}
-									//카카오연동확인
-									if(memberType == '1'){
-										gradeImg += '<span class="icon_logon"><img src="//cdnimg.melon.co.kr/resource/image/web/common/icon_kakao.png" width="18" height="18" alt="kakao"></span>';
-									}
-								} catch (e) {}
-
-								var logoutButtonHtml = '<button type="button" title="로그아웃" class="btn_top_logout" onclick="javascript:MELON.WEBSVC.POC.logout(\'\');"><img src="//cdnimg.melon.co.kr/resource/image/web/common/btn_top_logout.png" width="44" height="12" alt="로그아웃"> </button>';
-
-								html = ['<div class="header_login">',
-									' <span class="icon_grade">',
-									'' + gradeImg + '',
-									' </span>',
-									' <span class="wrap_id"><a href="javascript:location.href=_getHttpsMemberDomain()+ \'/muid/web/help/myinfointro_inform.htm\';" class="user_id"><strong>' + memId + '</strong></a> 님</span>',
-									fromMPSYn ? logoutButtonHtml : '', //멜론 플레이어에서 로그아웃 싱크 안맞는 이슈로 인해 로그아웃 멜론 플레이어에서 왔을 시 버튼 제거
-									'</div>'
-								].join('');
-								document.write(html);
-							}
-						</script>
+					
 					</div>
 					<!-- //140603_수정 -->
 				</div>
@@ -594,6 +385,16 @@
 	</div>
 	</header>
   <body>
+<%= javascript_include_tag "application" %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+	  <% if user_signed_in? %>
+  <p>현재 로그인된 유저의 이메일 : <%= current_user.email %></p>
+	<p>현재 로그인된 유저의 이메일 : <%= current_user.name %></p>
+  <%= link_to("로그아웃", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } )%>
+<% else %>
+  <%= link_to("로그인", new_user_session_path) %>
+<% end %>
     <%= yield %>
   </body>
 </html>
