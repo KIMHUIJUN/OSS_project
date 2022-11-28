@@ -1,24 +1,78 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Artists</h1>
+<div class = "atist_100" style = "margin: 0 auto; background: 0;">
+	<div style = "padding: 0 20px; position: relative; width: 1008px; margin: 0 auto;">
+		<div class = "contents" style ="position: relative; z-index: 10; display: block; width: 1008px; min-height: 800px; padding: 29px 0 88px; zoom: 1;font-family = 'Malgun Gothic'">
+			<div class ="page_header" style = "position: relative; margin-bottom:8px">
+				<h2 style = "height:40px; line-height:40px; font-size:26px;">
+					TOP100
+				</h2>
+			</div>
+			<div class= "multi_row" style="position: relative;">
+			<div class = "calender" style="position: absolute; min-height:34px; text-algin:center; z-index: 9; margin-bottom:32px; margin-top: 12px !important;">
+				<span class ="yyyymmdd" style = "line-height: 34px; color: #575757; font-size: 26px; vertical-align:middle; margin-left:500px;">
+					<span><%= Time.new.strftime("%Y.%m.%d") %></span>
+				</span>
+			</div>
+			
+		</div>
+			<div class="wrap_btn" style="margin-bottom:10px; margin-top:80px;">
+				<button type = "button" class = " button_rbox" style ="height: 30px;line-height: 28px;padding: 0 16px;border: 1px solid #b2b2b2;border-radius: 100px;color: #606060;font-size: 12px;visibility: visible;overflow: hidden; margin-left: 0;">
+					<span style="width: 13px; height: 11px; background-position: -203px 0; top: 1px; position:relative; margin-right:4px; vertical-align:baseline;">
+						<span style="margin-left:3px;">셔플듣기</span>
+					</span>
+					
+				</button>
+				<button type = "button" class = " button_rbox" style ="height: 30px;line-height: 28px;padding: 0 16px;border: 1px solid #b2b2b2;border-radius: 100px;color: #606060;font-size: 12px;visibility: visible;overflow: hidden;margin-left:5px;">
+					<span style="width: 13px; height: 11px; background-position: -203px 0; top: 1px; position:relative; margin-right:4px; vertical-align:baseline;">
+						<span style="margin-left:3px;">전체듣기</span>
+					</span>
+					
+				</button>
+				<button type = "button" class = " button_rbox" style ="height: 30px;line-height: 28px;padding: 0 16px;border: 1px solid #b2b2b2;border-radius: 100px;color: #606060;font-size: 12px;visibility: visible;overflow: hidden;margin-left:5px;">
+					<span style="width: 13px; height: 11px; background-position: -203px 0; top: 1px; position:relative; margin-right:4px; vertical-align:baseline;">
+						<span style="margin-left:3px;"> 듣기</span>
+					</span>
+					
+				</button>
+				<button type = "button" class = " button_rbox" style ="height: 30px;line-height: 28px;padding: 0 16px;border: 1px solid #b2b2b2;border-radius: 100px;color: #606060;font-size: 12px;visibility: visible;overflow: hidden;margin-left:5px;">
+					<span style="width: 13px; height: 11px; background-position: -203px 0; top: 1px; position:relative; margin-right:4px; vertical-align:baseline;">
+						<span style="margin-left:3px;">담기</span>
+					</span>
+					
+				</button>
+				<button type = "button" class = " button_rbox" style ="height: 30px;line-height: 28px;padding: 0 16px;border: 1px solid #b2b2b2;border-radius: 100px;color: #606060;font-size: 12px;visibility: visible;overflow: hidden;margin-left:5px;">
+					<span style="width: 13px; height: 11px; background-position: -203px 0; top: 1px; position:relative; margin-right:4px; vertical-align:baseline;">
+						<span style="margin-left:3px;">다운</span>
+					</span>
+					
+				</button>
+				<button type = "button" class = " button_rbox" style ="height: 30px;line-height: 28px;padding: 0 16px;border: 1px solid #b2b2b2;border-radius: 100px;color: #606060;font-size: 12px;visibility: visible;overflow: hidden;margin-left:5px;">
+					<span style="width: 13px; height: 11px; background-position: -203px 0; top: 1px; position:relative; margin-right:4px; vertical-align:baseline;">
+						<span style="margin-left:3px;">FLAC</span>
+					</span>
+					
+				</button>
+				<button type = "button" class = " button_rbox" style ="height: 30px;line-height: 28px;padding: 0 16px;border: 1px solid #b2b2b2;border-radius: 100px;color: #606060;font-size: 12px;visibility: visible;overflow: hidden;margin-left:5px;">
+					<span style="width: 13px; height: 11px; background-position: -203px 0; top: 1px; position:relative; margin-right:4px; vertical-align:baseline;">
+						<span style="margin-left:3px;">선물</span>
+					</span>
+					
+				</button>
+			</div>
+		</div>
+		
+	</div>
+	
+</div>
+
 
 <table>
-  <thead>
-    <tr>
-	  <th>id</th>
-      <th>real_name</th>
-      <th>agency</th>
-      <th>Debut day</th>
-      <th>Birth day</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
   <tbody>
     <% @artists.each do |artist| %>
       <tr>
 		<td><%= artist.id %></td>
-	    <td><%= artist.real_name %></td>
+	    <td><%= artist.activity_name %></td>
 	    <td><%= artist.agency %></td>
         <td><%= artist.debut_day %></td>
         <td><%= artist.birth_day %></td>
