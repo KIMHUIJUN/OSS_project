@@ -10,7 +10,7 @@
 			</div>
 			<div class= "multi_row" style="position: relative;">
 			<div class = "calender" style="position: absolute; min-height:34px; text-algin:center; z-index: 9; margin-bottom:32px; margin-top: 12px !important;">
-				<span class ="yyyymmdd" style = "line-height: 34px; color: #575757; font-size: 26px; vertical-align:middle; margin-left:500px;">
+				<span class ="yyyymmdd" style = "line-height: 34px; color: #575757; font-size: 26px; vertical-align:middle; margin-left:460px;">
 					<span><%= Time.new.strftime("%Y.%m.%d") %></span>
 				</span>
 			</div>
@@ -60,6 +60,89 @@
 					
 				</button>
 			</div>
+			<table style =" width:100%; border-collapse: collapse; border-spacing:0;" border="1">
+				<thead>
+					<tr>
+						<th style="height: 48px; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; color: #606060; font-size: 13px; text-align:left; vertical-align:middle; ">
+							<div class="wrap t_right" style = "padding-top:2px; text-align:right;">
+								<input type="checkbox" style= "margin:0;">
+							</div>
+						</th>
+						<th style = "height: 48px; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; color: #606060; font-size: 13px; text-align: left; vertical-align: middle;">
+							<div style="padding-top: 2px;">
+								<span style="display: inline-block; width:32px; padding: 0 18px 0 12px;">순위</span>
+							</div>
+						</th>
+						<th style = "height: 48px; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; color: #606060; font-size: 13px; text-align: left; vertical-align: middle;">
+							<div style="padding-top: 2px;position: absolute;top: -5000em;left: 0;width: 0;height: 0;font-size: 0;line-height: 0;overflow: hidden;">
+								순위등락
+							</div>
+						</th>
+						<th style = "height: 48px; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; color: #606060; font-size: 13px; text-align: left; vertical-align: middle;">
+							<div style="padding-top: 2px;position: absolute;top: -5000em;left: 0;width: 0;height: 0;font-size: 0;line-height: 0;overflow: hidden;">
+								앨범이미지
+							</div>
+						</th>
+						<th style = "height: 48px; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; color: #606060; font-size: 13px; text-align: left; vertical-align: middle;">
+							<div class ="none"style="padding-top: 2px;position: absolute;top: -5000em;left: 0;width: 0;height: 0;font-size: 0;line-height: 0;overflow: hidden;">
+								곡상세가기
+							</div>
+						</th>
+						<th style = "height: 48px; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; color: #606060; font-size: 13px; text-align: left; vertical-align: middle;">
+							<div style="padding-top: 2px; padding-left: 12px;">
+								곡정보
+							</div>
+						</th>
+						<th style = "height: 48px; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; color: #606060; font-size: 13px; text-align: left; vertical-align: middle;">
+							<div style="padding-top: 2px; padding-left: 12px;">
+								앨범
+							</div>
+						</th>
+						<th style = "height: 48px; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; color: #606060; font-size: 13px; text-align: left; vertical-align: middle;">
+							<div style="padding-top: 2px; padding-left: 30px;">
+								좋아요
+							</div>
+						</th>
+						<th style = "height: 48px; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; color: #606060; font-size: 13px; text-align: left; vertical-align: middle;">
+							<div style="padding-top: 2px; text-align:center;">
+								듣기
+							</div>
+						</th>
+						<th style = "height: 48px; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; color: #606060; font-size: 13px; text-align: left; vertical-align: middle;">
+							<div style="padding-top: 2px; text-align:center;">
+								담기
+							</div>
+						</th>
+						<th style = "height: 48px; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; color: #606060; font-size: 13px; text-align: left; vertical-align: middle;">
+							<div style="padding-top: 2px; text-align:center;">
+								다운
+							</div>
+						</th>
+						<th style = "height: 48px; border-top: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; color: #606060; font-size: 13px; text-align: left; vertical-align: middle;">
+							<div style="padding-top: 2px; text-align:center;">
+								뮤비
+							</div>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @artists.each do |artist| %>
+					<tr style="display: table-row;">
+						<td style="height:84px; border-bottom:1px solid #f2f2f2; text-algin:left; vertical-algin:middle;">
+							<div style = "text-algin: right; margin-top:40%;">
+								<input type="checkbox" style="padding: initial;border: initial;background-color: initial;cursor: default;appearance: auto;box-sizing: border-box; vertical-algin:middle;" >
+							</div>
+						</td>
+						<td style="text-align: left; vertical-align: middle; height:84px; border-bottom:1px solid #f2f2f2;">
+							<div class="atist_id" style="text-align:center;">
+								<span style="display: inline-block;padding-top: 5px;font-size: 18px;" ><%= artist.id %></span>
+							</div>
+						</td>
+					</tr>
+					 <% end %>
+				</tbody>
+				
+			</table>
 		</div>
 		
 	</div>
