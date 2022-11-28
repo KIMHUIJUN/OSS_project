@@ -42,6 +42,34 @@
 
 <img src= <%=@album.album_link%>/>
 <br>
+<% if user_signed_in? %>
+	
+<%= render 'commends/form', commend: @commend %>
+<%end%>
+<h4>
+	댓글 <%= @commends.size %> 개
+</h4>
+<table>
+  <thead>
+    <tr>
+	  <th>작성자</th>
+  	  <th>Commend</th>
+  
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @commends.each do |commend| %>
+	  <tr>
+		  <td><%= commend.user.name %></td>
+
+		  <td><%= commend.commend %></td>
+
+	  </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <br>
 <%= link_to 'Edit', edit_album_path(@album) %> |

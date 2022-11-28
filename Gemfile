@@ -5,7 +5,15 @@ ruby '2.6.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4'
-
+gem 'devise'
+gem 'rolify'     # role 관리
+gem 'authority'  # 권한설정
+# gem "omniauth-rails_csrf_protection"
+gem 'omniauth'
+gem 'oauth2', '~> 1.2'
+gem 'omniauth-kakao', :git => 'https://github.com/hcn1519/omniauth-kakao'
+gem 'figaro'
+gem "letter_opener", group: :development
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3', '~> 1.4'
 # change Use postgresql as the database for Active Record

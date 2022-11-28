@@ -9,6 +9,9 @@ class AlbumsController < ApplicationController
   # GET /albums/1 or /albums/1.json
   def show
 	  @tracks = Track.where(album_id: @album.id)	
+	  @commends = Commend.where(album_id: @album.id)
+	  @commend = Commend.new
+	  @users = User.all		
   end
 
   # GET /albums/new

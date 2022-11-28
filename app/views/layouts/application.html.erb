@@ -3,6 +3,12 @@
   <html lang="ko">
 	
 	<head>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>Melon::음악이 필요한 순간, 멜론</title>
@@ -596,6 +602,16 @@
 	</div>
 	</header>
   <body>
+<%= javascript_include_tag "application" %>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+	  <% if user_signed_in? %>
+  <p>현재 로그인된 유저의 이메일 : <%= current_user.email %></p>
+	<p>현재 로그인된 유저의 이메일 : <%= current_user.name %></p>
+  <%= link_to("로그아웃", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } )%>
+<% else %>
+  <%= link_to("로그인", new_user_session_path) %>
+<% end %>
     <%= yield %>
   </body>
 </html>
