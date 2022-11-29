@@ -102,40 +102,15 @@
 							</a>
 						</div>
 						
-					<!--        로그인 안한부분       -->
-					<div class = "id_wrap" style=" width: 280px; margin-left:245px; height:316px; margin-top:24px;float: left;">
-							<div class= "login_wrap" style=" position: relative; width:280px; height:119px;">
-								<div class="button_login" style=" height:115px; padding:0 17px; border: 1px solid #e0e0e0; background:#fbfbfb; text-align: center;">
-									<div style="padding: 24px 0 7px; overflow:hidden;">
-										<p style=" float:left; color: #939393; font-size: 11px; letter-spacing: -0.5px;">
-											멜론을 더 안전하게 이용하세요
-										</p>
-										<!--      회원가입 버튼     -->
-										<a href="" style="float: right;color: #818181;font-size: 11px;letter-spacing: -0.5px;" >회원가입</a>
-									</div>
-									<!--       로그인 버튼      -->
-									<button class="btn_login" type ="button" style="width: 100%;height: 42px;background-color: #00d344;color: #fff;font-size: 14px;">
-										<span style="display:block; position:relative;color: #fff;"><%= link_to("로그인", new_user_session_path) %></span>
-									</button>
-								</div>
-								
-						</div>
-						<div style="position: relative;width: 280px;height: 188px;margin-top: 8px;">
-						<ul style="width:280px;height: 188px;position: relative; overflow: hidden;">
-							<li style="position: absolute; height: 188px;">
-								<img style="width: 280px;aspect-ratio: auto 280 / 188;height: 188px;" src="https://cdnimg.melon.co.kr/svc/images/main/imgUrl20221125105124.jpg/melon/quality/80">
-							</li>
-						</ul>
-					</div>
-					</div>
+					
 						<!--          로그인 된부분           -->
-						
-						<!-- <div class = "id_wrap" style="position: relative;border: 1px solid #d8dadb;background-color: #f9f9f9;width: 278px;height: 117px;">
+						<% if user_signed_in? %>
+						<div class = "id_wrap" style="position: relative;border: 1px solid #d8dadb;background-color: #f9f9f9;width: 278px;height: 117px; margin-left:245px;margin-top:24px;">
 							<div class="info" style="height:30px; padding:10px 6px 0 6px; background:#f3f3f3">
 								<strong>
-								<span style="display: inline-block;width: auto;max-width: 92px;margin: -2px 0 0 0;padding: 0;padding-top: 2px;padding-bottom: 1px;white-space: nowrap;text-overflow: ellipsis;word-wrap: normal;overflow: hidden;vertical-align: top;">유저이름</span>
+								<span style="display: inline-block;width: auto;max-width: 92px;margin: -2px 0 0 0;padding: 0;padding-top: 2px;padding-bottom: 1px;white-space: nowrap;text-overflow: ellipsis;word-wrap: normal;overflow: hidden;vertical-align: top;"><%= current_user.name %></span>
 									님</strong>
-								<span style="float: right;width: 41px;margin: 0;padding: 1px 5px 0 5px;border: 1px solid #d9d9d9;line-height: 17px;background-color: #fff;letter-spacing: -1px;text-decoration: none;">로그아웃 링크</span>
+								<span style="float: right;width: 41px;margin: 0;padding: 1px 5px 0 5px;border: 1px solid #d9d9d9;line-height: 17px;background-color: #fff;letter-spacing: -1px;text-decoration: none;"><h5><%= link_to("로그아웃", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } )%></h5></span>
 							</div>
 							<div class="music_used" style="border-top: 1px solid #d8dadb;">
 								<strong style="    display: block;margin: 0 15px;padding: 14px 0 7px 7px;background: url(//cdnimg.melon.co.kr/resource/image/web/main/bg_dot_01.png) no-repeat left 21px;font-weight: normal;vertical-align: top;">
@@ -151,14 +126,64 @@
 									</li>
 								</ul>
 							</div>
-						</div> -->
-						<div class="chart" style="width: 280px;float: left;margin-left:245px;height: 472px;margin-top: 32px;">
+						</div>
+						<div style="position: absolute;width: 280px;height: 188px;margin-top: 145px; margin-left:245px;">
+						<ul style="width:280px;height: 196px;position: relative; overflow: hidden;">
+							<li style="position: absolute; height: 188px;margin-top:8px;">
+								<img style=" width: 280px;aspect-ratio: auto 280 / 188;height: 188px;" src="https://cdnimg.melon.co.kr/svc/images/main/imgUrl20221125105124.jpg/melon/quality/80">
+							</li>
+						</ul>
+					</div>
+					</div>
+					<div class="chart" style="width: 280px;float: left; margin-left:733px;height: 472px;margin-top: 32px;">
 							<h2 style="height: 24px;color: #1a1a1a;font-size: 15px;line-height: 15px;letter-spacing: -1px;font-weight: bold;">
 								<a href="/tacks" style="float: left;width: 70px;height: 15px;display: block;">멜론 차트</a>
 								<span style="float:right; font-size:13px;"><%= Time.new.strftime("%Y.%m.%d") %>
 								<h4 style="float:right; padding-left:2px;font-size:10px;">기준</h4></span>
 							</h2>
+							<div class="wrap_chart_tab" style="position:relative;zoom: 1;">
+								
+							</div>
 						</div>
+						<% else %>
+						<!--        로그인 안한부분       -->
+					<div class = "id_wrap" style=" width: 280px; margin-left:245px; height:316px; margin-top:24px;float: left;">
+							<div class= "login_wrap" style=" position: relative; width:280px; height:119px;">
+								<div class="button_login" style=" height:115px; padding:0 17px; border: 1px solid #e0e0e0; background:#fbfbfb; text-align: center;">
+									<div style="padding: 24px 0 7px; overflow:hidden;">
+										<p style=" float:left; color: #939393; font-size: 11px; letter-spacing: -0.5px;">
+											멜론을 더 안전하게 이용하세요
+										</p>
+										<!--      회원가입 버튼     -->
+										<a href="" style="float: right;color: #818181;font-size: 11px;letter-spacing: -0.5px;" >회원가입</a>
+									</div>
+									<!--       로그인 버튼      -->
+									<button class="btn_login" type ="button" style="width: 100%;height: 42px;background-color: #00d344;color: #fff;font-size: 14px;">
+										<span style="display:block; position:relative;color: #fff;"><%= link_to("로그인", new_user_session_path) %></span>
+									</button>
+								</div>
+						</div>
+						<div style="position: relative;width: 280px;height: 188px;margin-top: 8px;">
+						<ul style="width:280px;height: 188px;position: relative; overflow: hidden;">
+							<li style="position: absolute; height: 188px;">
+								<img style="width: 280px;aspect-ratio: auto 280 / 188;height: 188px;" src="https://cdnimg.melon.co.kr/svc/images/main/imgUrl20221125105124.jpg/melon/quality/80">
+							</li>
+						</ul>
+					</div>
+						<div class="chart" style="width: 280px;float: left;margin-left:-1px;height: 472px;margin-top: 32px;">
+							<h2 style="height: 24px;color: #1a1a1a;font-size: 15px;line-height: 15px;letter-spacing: -1px;font-weight: bold;">
+								<a href="/tacks" style="float: left;width: 70px;height: 15px;display: block;">멜론 차트</a>
+								<span style="float:right; font-size:13px;"><%= Time.new.strftime("%Y.%m.%d") %>
+								<h4 style="float:right; padding-left:2px;font-size:10px;">기준</h4></span>
+							</h2>
+							<div class="wrap_chart_tab" style="position:relative;zoom: 1;">
+								
+							</div>
+						</div>
+						<% end %>
+					</div>
+					
+						
 						</div>
 					<div class="hot_issue" style="clear: both;width: 704px;position: relative;float: left;height: 472px;margin-top: 32px;margin-bottom: 49px;">
 						<h2 style="height: 24px;color: #1a1a1a;font-size: 15px;line-height: 15px;letter-spacing: -1px;font-weight: bold;">
@@ -267,16 +292,4 @@
 			</div>
 			
 		</div>
-		
 	</div>
-</div>
-<body>
-	
-<% if user_signed_in? %>
-  <p>현재 로그인된 유저의 이메일 : <%= current_user.email %></p>
-	<p>현재 로그인된 유저의 이메일 : <%= current_user.name %></p>
-  <%= link_to("로그아웃", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } )%>
-<% else %>
-  <%= link_to("로그인", new_user_session_path) %>
-<% end %>
-</body>
