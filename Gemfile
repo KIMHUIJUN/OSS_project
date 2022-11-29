@@ -9,6 +9,9 @@ gem 'devise'
 gem 'rolify'     # role 관리
 gem 'authority'  # 권한설정
 # gem "omniauth-rails_csrf_protection"
+gem 'httparty'
+gem 'iamport'
+
 gem 'omniauth'
 gem 'oauth2', '~> 1.2'
 gem 'omniauth-kakao', :git => 'https://github.com/hcn1519/omniauth-kakao'
