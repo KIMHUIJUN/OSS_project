@@ -110,7 +110,11 @@
 								<strong>
 								<span style="display: inline-block;width: auto;max-width: 92px;margin: -2px 0 0 0;padding: 0;padding-top: 2px;padding-bottom: 1px;white-space: nowrap;text-overflow: ellipsis;word-wrap: normal;overflow: hidden;vertical-align: top;"><%= current_user.name %></span>
 									님</strong>
-								<span style="float: right;width: 41px;margin: 0;padding: 1px 5px 0 5px;border: 1px solid #d9d9d9;line-height: 17px;background-color: #fff;letter-spacing: -1px;text-decoration: none;"><h5><%= link_to("로그아웃", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } )%></h5></span>
+								<!--    내정보    -->
+								<a style="margin: 0 0 0 1px;padding: 2px 0 0;font-size: 11px;color: #7d7d7d;">
+									<span>내정보</span>
+								</a>
+								<span style="float: right;width: 48px;margin: 0;padding: 1px 5px 0 5px;border: 1px solid #d9d9d9;line-height: 17px;background-color: #fff;letter-spacing: -1px;text-decoration: none;"><%= link_to("로그아웃", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } )%></span>
 							</div>
 							<div class="music_used" style="border-top: 1px solid #d8dadb;">
 								<strong style="    display: block;margin: 0 15px;padding: 14px 0 7px 7px;background: url(//cdnimg.melon.co.kr/resource/image/web/main/bg_dot_01.png) no-repeat left 21px;font-weight: normal;vertical-align: top;">
@@ -142,7 +146,182 @@
 								<h4 style="float:right; padding-left:2px;font-size:10px;">기준</h4></span>
 							</h2>
 							<div class="wrap_chart_tab" style="position:relative;zoom: 1;">
-								
+								<a style="position: absolute;z-index: 1;margin-top: -1px;padding-top: 15px;border-top: 2px solid #8ac121;display: block;width: 278px;height: 28px;text-align: center;border-left:1px solid #8ac121; border-right:1px solid #8ac121; border-bottom:1px solid #8ac121;">
+								<span style="font-weight:bold; font-size:15px;">TOP100</span></a>
+								<div class="chart" style="width: 278px;position: absolute;border: 1px solid #dfe6e8;border-width: 0 1px;display: block;margin-left:-0px; height:341px;margin-top:45px;">
+									<ul style="border-top: 1px solid #d8ddde;">
+										<li style="background: #fff;position: relative;width: 278px;height: 33px;border-bottom: 1px solid #e9edef;font-size: 0;line-height: 0;">
+											<div style="float: left;width: 71px;">
+												<h1 style="display: inline-block;float: left;width: 34px;height: 13px;margin: 9px 0 0 5px;background: url(//cdnimg.melon.co.kr/resource/image/web/main/icon_main.png) no-repeat 0 -445px;">1</h1>
+												<span style="overflow:hidden; width:25px;">위</span>
+											</div>
+											<div style="float:left; width:207px; padding-top:10px;">
+												<p style="    float: left;width: 120px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+													<span style="    display: inline-block;width: auto;max-width: 100px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">사건의 지평선</span>
+													
+												</p>
+												<div style="float:left; width:74px; margin-left: 1px;">
+													<div style="display: block;overflow: hidden;float: left;max-width: 100%;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+														<span style="font-size: 12px;line-height: 15px;">윤하 (YOUNHA)</span>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li style="background: #f8f8f8;position: relative;width: 278px;height: 33px;border-bottom: 1px solid #e9edef;font-size: 0;line-height: 0;">
+											<div style="float: left;width: 71px; overflow:hidden;">
+												<h1 style="background-position: 0 -478px;display: inline-block;float: left;width: 34px;height: 13px;margin: 9px 0 0 5px;background: url(//cdnimg.melon.co.kr/resource/image/web/main/icon_main.png) no-repeat 0 -478px;">2</h1>
+												<span style="overflow:hidden; width:25px;">위</span>
+											</div>
+											<div style="float:left; width:207px; padding-top:10px;">
+												<p style="    float: left;width: 120px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+													<span style="    display: inline-block;width: auto;max-width: 100px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">ANTIFRAGILE</span>
+													
+												</p>
+												<div style="float:left; width:74px; margin-left: 1px;">
+													<div style="display: block;overflow: hidden;float: left;max-width: 100%;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+														<span style="font-size: 12px;line-height: 15px;">LE SSERAFIM (르세라핌)</span>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li style="background: #fff;position: relative;width: 278px;height: 33px;border-bottom: 1px solid #e9edef;font-size: 0;line-height: 0;">
+											<div style="float: left;width: 71px;">
+												<h1 style="display: inline-block;float: left;width: 34px;height: 13px;margin: 9px 0 0 5px;background: url(//cdnimg.melon.co.kr/resource/image/web/main/icon_main.png) no-repeat 0 -509px;">3</h1>
+												<span style="overflow:hidden; width:25px;">위</span>
+											</div>
+											<div style="float:left; width:207px; padding-top:10px;">
+												<p style="    float: left;width: 120px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+													<span style="    display: inline-block;width: auto;max-width: 100px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">Hype boy</span>
+													
+												</p>
+												<div style="float:left; width:74px; margin-left: 1px;">
+													<div style="display: block;overflow: hidden;float: left;max-width: 100%;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+														<span style="font-size: 12px;line-height: 15px;">NewJeans</span>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li style="background: #f8f8f8;position: relative;width: 278px;height: 33px;border-bottom: 1px solid #e9edef;font-size: 0;line-height: 0;">
+											<div style="float: left;width: 71px; overflow:hidden;">
+												<h1 style="display: inline-block;float: left;width: 34px;height: 13px;margin: 9px 0 0 5px;background: url(//cdnimg.melon.co.kr/resource/image/web/main/icon_main.png) no-repeat 0 -540px;">4</h1>
+												<span style="overflow:hidden; width:25px;">위</span>
+											</div>
+											<div style="float:left; width:207px; padding-top:10px;">
+												<p style="    float: left;width: 120px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+													<span style="    display: inline-block;width: auto;max-width: 100px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">Nxde</span>
+													
+												</p>
+												<div style="float:left; width:74px; margin-left: 1px;">
+													<div style="display: block;overflow: hidden;float: left;max-width: 100%;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+														<span style="font-size: 12px;line-height: 15px;">(여자)아이들</span>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li style="background: #fff;position: relative;width: 278px;height: 33px;border-bottom: 1px solid #e9edef;font-size: 0;line-height: 0;">
+											<div style="float: left;width: 71px;">
+												<h1 style="display: inline-block;float: left;width: 34px;height: 13px;margin: 9px 0 0 5px;background: url(//cdnimg.melon.co.kr/resource/image/web/main/icon_main.png) no-repeat 0 -571px;">5</h1>
+												<span style="overflow:hidden; width:25px;">위</span>
+											</div>
+											<div style="float:left; width:207px; padding-top:10px;">
+												<p style="    float: left;width: 120px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+													<span style="    display: inline-block;width: auto;max-width: 100px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">After LIKE</span>
+													
+												</p>
+												<div style="float:left; width:74px; margin-left: 1px;">
+													<div style="display: block;overflow: hidden;float: left;max-width: 100%;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+														<span style="font-size: 12px;line-height: 15px;">IVE (아이브)</span>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li style="background: #f8f8f8;position: relative;width: 278px;height: 33px;border-bottom: 1px solid #e9edef;font-size: 0;line-height: 0;">
+											<div style="float: left;width: 71px; overflow:hidden;">
+												<h1 style="display: inline-block;float: left;width: 34px;height: 13px;margin: 9px 0 0 5px;background: url(//cdnimg.melon.co.kr/resource/image/web/main/icon_main.png) no-repeat 0 -602px;">6</h1>
+												<span style="overflow:hidden; width:25px;">위</span>
+											</div>
+											<div style="float:left; width:207px; padding-top:10px;">
+												<p style="    float: left;width: 120px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+													<span style="    display: inline-block;width: auto;max-width: 100px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">사랑은 늘 도망가</span>
+													
+												</p>
+												<div style="float:left; width:74px; margin-left: 1px;">
+													<div style="display: block;overflow: hidden;float: left;max-width: 100%;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+														<span style="font-size: 12px;line-height: 15px;">임영웅</span>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li style="background: #fff;position: relative;width: 278px;height: 33px;border-bottom: 1px solid #e9edef;font-size: 0;line-height: 0;">
+											<div style="float: left;width: 71px;">
+												<h1 style="display: inline-block;float: left;width: 34px;height: 13px;margin: 9px 0 0 5px;background: url(//cdnimg.melon.co.kr/resource/image/web/main/icon_main.png) no-repeat 0 -633px;">7</h1>
+												<span style="overflow:hidden; width:25px;">위</span>
+											</div>
+											<div style="float:left; width:207px; padding-top:10px;">
+												<p style="    float: left;width: 120px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+													<span style="    display: inline-block;width: auto;max-width: 100px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">새삥 (Prod. ZICO) (Feat. 호미들)</span>
+													
+												</p>
+												<div style="float:left; width:74px; margin-left: 1px;">
+													<div style="display: block;overflow: hidden;float: left;max-width: 100%;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+														<span style="font-size: 12px;line-height: 15px;">지코 (ZICO)</span>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li style="background: #f8f8f8;position: relative;width: 278px;height: 33px;border-bottom: 1px solid #e9edef;font-size: 0;line-height: 0;">
+											<div style="float: left;width: 71px; overflow:hidden;">
+												<h1 style="display: inline-block;float: left;width: 34px;height: 13px;margin: 9px 0 0 5px;background: url(//cdnimg.melon.co.kr/resource/image/web/main/icon_main.png) no-repeat 0 -664px;">8</h1>
+												<span style="overflow:hidden; width:25px;">위</span>
+											</div>
+											<div style="float:left; width:207px; padding-top:10px;">
+												<p style="    float: left;width: 120px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+													<span style="    display: inline-block;width: auto;max-width: 100px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">우리들의 블루스</span>
+													
+												</p>
+												<div style="float:left; width:74px; margin-left: 1px;">
+													<div style="display: block;overflow: hidden;float: left;max-width: 100%;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+														<span style="font-size: 12px;line-height: 15px;">임영웅</span>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li style="background: #fff;position: relative;width: 278px;height: 33px;border-bottom: 1px solid #e9edef;font-size: 0;line-height: 0;">
+											<div style="float: left;width: 71px;">
+												<h1 style="display: inline-block;float: left;width: 34px;height: 13px;margin: 9px 0 0 5px;background: url(//cdnimg.melon.co.kr/resource/image/web/main/icon_main.png) no-repeat 0 -695px;">9</h1>
+												<span style="overflow:hidden; width:25px;">위</span>
+											</div>
+											<div style="float:left; width:207px; padding-top:10px;">
+												<p style="    float: left;width: 120px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+													<span style="    display: inline-block;width: auto;max-width: 100px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">London Boy</span>
+													
+												</p>
+												<div style="float:left; width:74px; margin-left: 1px;">
+													<div style="display: block;overflow: hidden;float: left;max-width: 100%;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+														<span style="font-size: 12px;line-height: 15px;">임영웅</span>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li style="background: #f8f8f8;position: relative;width: 278px;height: 33px;border-bottom: 1px solid #e9edef;font-size: 0;line-height: 0;">
+											<div style="float: left;width: 71px; overflow:hidden;">
+												<h1 style="display: inline-block;float: left;width: 34px;height: 13px;margin: 9px 0 0 5px;background: url(//cdnimg.melon.co.kr/resource/image/web/main/icon_main.png) no-repeat 0 -726px;">10</h1>
+												<span style="overflow:hidden; width:25px;">위</span>
+											</div>
+											<div style="float:left; width:207px; padding-top:10px;">
+												<p style="    float: left;width: 120px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+													<span style="    display: inline-block;width: auto;max-width: 100px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">Polaroid</span>
+													
+												</p>
+												<div style="float:left; width:74px; margin-left: 1px;">
+													<div style="display: block;overflow: hidden;float: left;max-width: 100%;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+														<span style="font-size: 12px;line-height: 15px;">임영웅</span>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</div>
 						<% else %>
@@ -170,14 +349,189 @@
 							</li>
 						</ul>
 					</div>
-						<div class="chart" style="width: 280px;float: left;margin-left:-1px;height: 472px;margin-top: 32px;">
+						<div class="chart" style="width: 280px;float: left;margin-left:1px;height: 472px;margin-top: 32px;">
 							<h2 style="height: 24px;color: #1a1a1a;font-size: 15px;line-height: 15px;letter-spacing: -1px;font-weight: bold;">
 								<a href="/tacks" style="float: left;width: 70px;height: 15px;display: block;">멜론 차트</a>
 								<span style="float:right; font-size:13px;"><%= Time.new.strftime("%Y.%m.%d") %>
 								<h4 style="float:right; padding-left:2px;font-size:10px;">기준</h4></span>
 							</h2>
 							<div class="wrap_chart_tab" style="position:relative;zoom: 1;">
-								
+								<a style="position: absolute;z-index: 1;margin-top: -1px;padding-top: 15px;border-top: 2px solid #8ac121;display: block;width: 278px;height: 28px;text-align: center;border-left:1px solid #8ac121; border-right:1px solid #8ac121; border-bottom:1px solid #8ac121;">
+								<span style="font-weight:bold; font-size:15px;">TOP100</span></a>
+								<div class="chart" style="width: 278px;position: absolute;border: 1px solid #dfe6e8;border-width: 0 1px;display: block;margin-left:-0px; height:341px;margin-top:45px;">
+									<ul style="border-top: 1px solid #d8ddde;">
+										<li style="background: #fff;position: relative;width: 278px;height: 33px;border-bottom: 1px solid #e9edef;font-size: 0;line-height: 0;">
+											<div style="float: left;width: 71px;">
+												<h1 style="display: inline-block;float: left;width: 34px;height: 13px;margin: 9px 0 0 5px;background: url(//cdnimg.melon.co.kr/resource/image/web/main/icon_main.png) no-repeat 0 -445px;">1</h1>
+												<span style="overflow:hidden; width:25px;">위</span>
+											</div>
+											<div style="float:left; width:207px; padding-top:10px;">
+												<p style="    float: left;width: 120px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+													<span style="    display: inline-block;width: auto;max-width: 100px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">사건의 지평선</span>
+													
+												</p>
+												<div style="float:left; width:74px; margin-left: 1px;">
+													<div style="display: block;overflow: hidden;float: left;max-width: 100%;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+														<span style="font-size: 12px;line-height: 15px;">윤하 (YOUNHA)</span>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li style="background: #f8f8f8;position: relative;width: 278px;height: 33px;border-bottom: 1px solid #e9edef;font-size: 0;line-height: 0;">
+											<div style="float: left;width: 71px; overflow:hidden;">
+												<h1 style="background-position: 0 -478px;display: inline-block;float: left;width: 34px;height: 13px;margin: 9px 0 0 5px;background: url(//cdnimg.melon.co.kr/resource/image/web/main/icon_main.png) no-repeat 0 -478px;">2</h1>
+												<span style="overflow:hidden; width:25px;">위</span>
+											</div>
+											<div style="float:left; width:207px; padding-top:10px;">
+												<p style="    float: left;width: 120px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+													<span style="    display: inline-block;width: auto;max-width: 100px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">ANTIFRAGILE</span>
+													
+												</p>
+												<div style="float:left; width:74px; margin-left: 1px;">
+													<div style="display: block;overflow: hidden;float: left;max-width: 100%;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+														<span style="font-size: 12px;line-height: 15px;">LE SSERAFIM (르세라핌)</span>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li style="background: #fff;position: relative;width: 278px;height: 33px;border-bottom: 1px solid #e9edef;font-size: 0;line-height: 0;">
+											<div style="float: left;width: 71px;">
+												<h1 style="display: inline-block;float: left;width: 34px;height: 13px;margin: 9px 0 0 5px;background: url(//cdnimg.melon.co.kr/resource/image/web/main/icon_main.png) no-repeat 0 -509px;">3</h1>
+												<span style="overflow:hidden; width:25px;">위</span>
+											</div>
+											<div style="float:left; width:207px; padding-top:10px;">
+												<p style="    float: left;width: 120px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+													<span style="    display: inline-block;width: auto;max-width: 100px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">Hype boy</span>
+													
+												</p>
+												<div style="float:left; width:74px; margin-left: 1px;">
+													<div style="display: block;overflow: hidden;float: left;max-width: 100%;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+														<span style="font-size: 12px;line-height: 15px;">NewJeans</span>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li style="background: #f8f8f8;position: relative;width: 278px;height: 33px;border-bottom: 1px solid #e9edef;font-size: 0;line-height: 0;">
+											<div style="float: left;width: 71px; overflow:hidden;">
+												<h1 style="display: inline-block;float: left;width: 34px;height: 13px;margin: 9px 0 0 5px;background: url(//cdnimg.melon.co.kr/resource/image/web/main/icon_main.png) no-repeat 0 -540px;">4</h1>
+												<span style="overflow:hidden; width:25px;">위</span>
+											</div>
+											<div style="float:left; width:207px; padding-top:10px;">
+												<p style="    float: left;width: 120px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+													<span style="    display: inline-block;width: auto;max-width: 100px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">Nxde</span>
+													
+												</p>
+												<div style="float:left; width:74px; margin-left: 1px;">
+													<div style="display: block;overflow: hidden;float: left;max-width: 100%;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+														<span style="font-size: 12px;line-height: 15px;">(여자)아이들</span>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li style="background: #fff;position: relative;width: 278px;height: 33px;border-bottom: 1px solid #e9edef;font-size: 0;line-height: 0;">
+											<div style="float: left;width: 71px;">
+												<h1 style="display: inline-block;float: left;width: 34px;height: 13px;margin: 9px 0 0 5px;background: url(//cdnimg.melon.co.kr/resource/image/web/main/icon_main.png) no-repeat 0 -571px;">5</h1>
+												<span style="overflow:hidden; width:25px;">위</span>
+											</div>
+											<div style="float:left; width:207px; padding-top:10px;">
+												<p style="    float: left;width: 120px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+													<span style="    display: inline-block;width: auto;max-width: 100px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">After LIKE</span>
+													
+												</p>
+												<div style="float:left; width:74px; margin-left: 1px;">
+													<div style="display: block;overflow: hidden;float: left;max-width: 100%;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+														<span style="font-size: 12px;line-height: 15px;">IVE (아이브)</span>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li style="background: #f8f8f8;position: relative;width: 278px;height: 33px;border-bottom: 1px solid #e9edef;font-size: 0;line-height: 0;">
+											<div style="float: left;width: 71px; overflow:hidden;">
+												<h1 style="display: inline-block;float: left;width: 34px;height: 13px;margin: 9px 0 0 5px;background: url(//cdnimg.melon.co.kr/resource/image/web/main/icon_main.png) no-repeat 0 -602px;">6</h1>
+												<span style="overflow:hidden; width:25px;">위</span>
+											</div>
+											<div style="float:left; width:207px; padding-top:10px;">
+												<p style="    float: left;width: 120px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+													<span style="    display: inline-block;width: auto;max-width: 100px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">사랑은 늘 도망가</span>
+													
+												</p>
+												<div style="float:left; width:74px; margin-left: 1px;">
+													<div style="display: block;overflow: hidden;float: left;max-width: 100%;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+														<span style="font-size: 12px;line-height: 15px;">임영웅</span>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li style="background: #fff;position: relative;width: 278px;height: 33px;border-bottom: 1px solid #e9edef;font-size: 0;line-height: 0;">
+											<div style="float: left;width: 71px;">
+												<h1 style="display: inline-block;float: left;width: 34px;height: 13px;margin: 9px 0 0 5px;background: url(//cdnimg.melon.co.kr/resource/image/web/main/icon_main.png) no-repeat 0 -633px;">7</h1>
+												<span style="overflow:hidden; width:25px;">위</span>
+											</div>
+											<div style="float:left; width:207px; padding-top:10px;">
+												<p style="    float: left;width: 120px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+													<span style="    display: inline-block;width: auto;max-width: 100px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">새삥 (Prod. ZICO) (Feat. 호미들)</span>
+													
+												</p>
+												<div style="float:left; width:74px; margin-left: 1px;">
+													<div style="display: block;overflow: hidden;float: left;max-width: 100%;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+														<span style="font-size: 12px;line-height: 15px;">지코 (ZICO)</span>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li style="background: #f8f8f8;position: relative;width: 278px;height: 33px;border-bottom: 1px solid #e9edef;font-size: 0;line-height: 0;">
+											<div style="float: left;width: 71px; overflow:hidden;">
+												<h1 style="display: inline-block;float: left;width: 34px;height: 13px;margin: 9px 0 0 5px;background: url(//cdnimg.melon.co.kr/resource/image/web/main/icon_main.png) no-repeat 0 -664px;">8</h1>
+												<span style="overflow:hidden; width:25px;">위</span>
+											</div>
+											<div style="float:left; width:207px; padding-top:10px;">
+												<p style="    float: left;width: 120px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+													<span style="    display: inline-block;width: auto;max-width: 100px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">우리들의 블루스</span>
+													
+												</p>
+												<div style="float:left; width:74px; margin-left: 1px;">
+													<div style="display: block;overflow: hidden;float: left;max-width: 100%;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+														<span style="font-size: 12px;line-height: 15px;">임영웅</span>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li style="background: #fff;position: relative;width: 278px;height: 33px;border-bottom: 1px solid #e9edef;font-size: 0;line-height: 0;">
+											<div style="float: left;width: 71px;">
+												<h1 style="display: inline-block;float: left;width: 34px;height: 13px;margin: 9px 0 0 5px;background: url(//cdnimg.melon.co.kr/resource/image/web/main/icon_main.png) no-repeat 0 -695px;">9</h1>
+												<span style="overflow:hidden; width:25px;">위</span>
+											</div>
+											<div style="float:left; width:207px; padding-top:10px;">
+												<p style="    float: left;width: 120px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+													<span style="    display: inline-block;width: auto;max-width: 100px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">London Boy</span>
+													
+												</p>
+												<div style="float:left; width:74px; margin-left: 1px;">
+													<div style="display: block;overflow: hidden;float: left;max-width: 100%;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+														<span style="font-size: 12px;line-height: 15px;">임영웅</span>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li style="background: #f8f8f8;position: relative;width: 278px;height: 33px;border-bottom: 1px solid #e9edef;font-size: 0;line-height: 0;">
+											<div style="float: left;width: 71px; overflow:hidden;">
+												<h1 style="display: inline-block;float: left;width: 34px;height: 13px;margin: 9px 0 0 5px;background: url(//cdnimg.melon.co.kr/resource/image/web/main/icon_main.png) no-repeat 0 -726px;">10</h1>
+												<span style="overflow:hidden; width:25px;">위</span>
+											</div>
+											<div style="float:left; width:207px; padding-top:10px;">
+												<p style="    float: left;width: 120px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+													<span style="    display: inline-block;width: auto;max-width: 100px;overflow: hidden;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">Polaroid</span>
+													
+												</p>
+												<div style="float:left; width:74px; margin-left: 1px;">
+													<div style="display: block;overflow: hidden;float: left;max-width: 100%;font-size: 12px;line-height: 15px;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;">
+														<span style="font-size: 12px;line-height: 15px;">임영웅</span>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</div>
 						<% end %>

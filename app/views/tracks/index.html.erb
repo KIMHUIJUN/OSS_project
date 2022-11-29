@@ -126,22 +126,89 @@
 					</tr>
 				</thead>
 				<tbody>
-					
+					  <% @tracks.each do |track| %>
 					<tr style="display: table-row;">
 						<td style="height:84px; border-bottom:1px solid #f2f2f2; text-algin:left; vertical-algin:middle;">
-							<div style = "text-algin: right; margin-top:40%;">
-								<input type="checkbox" style="padding: initial;border: initial;background-color: initial;cursor: default;appearance: auto;box-sizing: border-box; vertical-algin:middle;" >
+							<div style = "text-algin: right; margin-top:31px;">
+								<input type="checkbox" style="border: initial;background-color: initial;cursor: default;appearance: auto;box-sizing: border-box; vertical-algin:middle;" >
 							</div>
 						</td>
 						<td style="text-align: left; vertical-align: middle; height:84px; border-bottom:1px solid #f2f2f2;">
 							<div class="atist_id" style="text-align:center;">
-								<span style="display: inline-block;padding-top: 5px;font-size: 18px;" ></span>
+								<span style="display: inline-block;padding-top: 5px;color: #333;font-size: 18px;width: 32px;padding: 0 18px 0 12px;" ><%= track.id%></span>
+							</div>
+						</td>
+						<!-- 순위 변동 -->
+						<td style="border-bottom:1px solid #f2f2f2; text-algin:left; vertical-algin:middle;">
+							<div class="wrap">
+								<span style="width: 14px;height: 10px;background-position: 0 -15px;"></span>
+							</div>
+						</td>
+						<td style="border-bottom:1px solid #f2f2f2; text-algin:left; vertical-algin:middle;">
+							<div class="wrap">
+								 <img style="width: 60px;aspect-ratio: auto 60 / 60;height: 60px;margin-top:10px; " src= "<%= track.album.album_link%>">
+							</div>
+						</td>
+						<td style="border-bottom:1px solid #f2f2f2; text-algin:left; vertical-algin:middle;">
+							<span style="width: 12px;background-position: -286px -30px;background-image: url(//cdnimg.melon.co.kr/resource/image/web/common/button_icons_sprite_20200521.png)-286px -30px;"> </span>
+						</td>
+						<td style="border-bottom:1px solid #f2f2f2;vertical-align: middle;">
+							<div class="wrap" style="text-algin:left;">
+								<div class="wrap_song_info" style="display: inline-block;width: 100%;margin-left: 12px;vertical-align: middle;">
+									<div class="ellipsis" style="display: inline-block;padding-right: 1px;vertical-align: middle;white-space: nowrap;text-overflow: ellipsis;word-wrap: normal;">
+										<span><%= link_to track.title, track_path(track.id) %></span>
+									</div>
+									<br>
+									<div style="max-width: 220px;">
+										<span style="color: #969696; font-size: 12px;"><%= track.album.artist.activity_name%></span>
+									</div>
+								</div>	
+							</div>
+						</td>
+						<td style="border-bottom:1px solid #f2f2f2;vertical-align: middle;">
+							<div style="display: inline-block;width: 100%;margin-left: 12px;vertical-align: middle;">
+								<div style="max-width:170px;display: inline-block;padding-right: 1px;vertical-align: middle;white-space: nowrap;text-overflow: ellipsis;word-wrap: normal;overflow: hidden;">
+									<span style="color: #969696;font-size: 14px;"><%= track.album.title%></span>
+								</div>
+							</div>
+						</td>
+						<td style="border-bottom:1px solid #f2f2f2;vertical-align: middle;">
+							<div class="wrap">
+								<button style="height: 14px;visibility: visible;overflow: hidden; margin-left:18px;">
+									<span style="display: inline-block;position: relative;top: 1px;width: 14px;height: 12px;background: url(//cdnimg.melon.co.kr/resource/image/web/common/bullet_icons_sprite_20201112.png) no-repeat -69px -15px;vertical-align: top;line-height: 0;font-size: 0; overflow: hidden;"></span>
+									<span style="color: #888;line-height: 14px;font-size: 12px;letter-spacing: 0;vertical-align: top;"><%= track.recommend %></span>
+								</button>
+								
+							</div>
+						</td>
+						<td style="border-bottom: 1px solid #f2f2f2;text-align: left;vertical-align: middle;">
+							<div style="text-align:center;">
+								<button type="button" style="width: 16px;height: 28px;background-position: 0 -30px;background-image: url(//cdnimg.melon.co.kr/resource/image/web/common/button_icons_sprite_20200521.png); background-position-y: -58px;">
+								</button>
+							</div>
+						</td>
+						<td style="border-bottom: 1px solid #f2f2f2;text-align: left;vertical-align: middle;">
+							<div style="text-align:center;">
+								<button type="button" style="width: 19px;height: 28px;background-position: -45px -30px;background-position-y: -58px;background-image: url(//cdnimg.melon.co.kr/resource/image/web/common/button_icons_sprite_20200521.png);">
+								</button>
+							</div>
+						</td>
+						<td style="border-bottom: 1px solid #f2f2f2;text-align: left;vertical-align: middle;">
+							<div style="text-align:center;">
+								<button type="button" style="width: 21px;height: 24px;background-position: -98px -30px;background-image: url(//cdnimg.melon.co.kr/resource/image/web/common/button_icons_sprite_20200521.png);background-position-y: -58px;">
+								</button>
+							</div>
+						</td>
+						<td style="border-bottom: 1px solid #f2f2f2;text-align: left;vertical-align: middle;">
+							<div style="text-align:center;">
+								<button type="button" style="width: 24px;height: 28px;background-position: -152px -30px;background-position-y: -58px;background-image: url(//cdnimg.melon.co.kr/resource/image/web/common/button_icons_sprite_20200521.png);">
+								</button>
 							</div>
 						</td>
 					</tr>
-				
+					  
 				</tbody>
-				
+				<%end%>
 			</table>
 		</div>
 		
