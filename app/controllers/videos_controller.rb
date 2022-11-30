@@ -4,11 +4,15 @@ class VideosController < ApplicationController
   # GET /videos or /videos.json
   def index
     @videos = Video.all
+	  @payuser = Payuser.new
   end
 
   # GET /videos/1 or /videos/1.json
   def show
 	  @pay_t = Payuser.where(user_id: current_user.id).size > 0 
+  	  @payuser = Payuser.new
+	  @tracks = Track.all
+	   @videos = Video.all
   end
 
   # GET /videos/new

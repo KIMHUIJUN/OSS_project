@@ -12,7 +12,7 @@
 
 <p>
   <strong>Track:</strong>
-  <%= @video.track %>
+  <%=link_to @video.track.album.artist.activity_name , artist_path(@video.track.album.artist.id) %>
 	
 </p>
 <% if @pay_t %>
@@ -20,5 +20,28 @@
 <% else %>
 <iframe width="560" height="315" src="<%= @video.link%>?start=0&end=60" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <% end %>
+<br>
+
+<p>
+	동일 앨범 다른 비디오
+</p>
+<% @tracks.each do |track| %>
+	<% if track.album.id == @video.track.album.id %>
+		<% @videos.each do |video| %>
+
+			<% if video.track.id == track.id %>
+				<% if video.id != @video.id %>
+					<% if @pay_t %>
+					<iframe width="560" height="315" src="<%= video.link%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<% else %>
+					<iframe width="560" height="315" src="<%= video.link%>?start=0&end=60" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					
+					<%end%>
+				<%end %>
+			<%end %>			
+		<%end %>
+	<%end %>
+<%end %>
+
 <%= link_to 'Edit', edit_video_path(@video) %> |
 <%= link_to 'Back', videos_path %>

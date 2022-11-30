@@ -15,3 +15,4 @@ REDIRECT_PATH: "/users/auth/kakao/callback"
 
 API_KEY: "3001820418676663"
 API_SECRET: "jgLe6hFLM0xZbYwCqX7W1kkyo614Orrbl0DAFFE0yh8r9k63DGroMteVinxrJpcWcvsP5mZm1c2oCIb8" 
+
