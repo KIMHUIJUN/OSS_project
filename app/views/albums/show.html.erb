@@ -11,7 +11,7 @@
 			<img src="<%= @album.album_link %>" style = "width: 208px; height: 208px;">	
 		</div>
 	
-	<div class="artist_Information" style="float:left; width:550px; margin-left:22px; margin-top:29px;">
+	<div class="artist_Information" style="float:left; width:600px; margin-left:22px; margin-top:29px;">
 		<p style="leter-spacing: -1px;color: #1a1a1a; font-family:'Malgun Gothic'; font-size: 20px;line-height: 30px;">
 			<%= @album.title %></p>
 			<span style = "font-size:16px;font-weight: bold;font-color: #00b423;"><%=link_to @album.artist.activity_name, artist_path(@album.artist.id)%></span>
@@ -33,11 +33,15 @@
 			<dd style = "float: left;width: 368px;color: #1a1a1a;font-size: 12px;line-height: 20px;font-family: 'Malgun Gothic';margin-top:5px;">
 			<span style="display: inline-block;"><%= @album.artist.agency %></span>
 			</dd>
+			<dt style="clear: left;float: left;width: 70px;padding-left: 2px;color: #666;font-size: 12px;line-height: 20px;margin-top:5px;"><span style="display: inline-block;position: relative;top: 1px;width: 14px;height: 12px;background: url(//cdnimg.melon.co.kr/resource/image/web/common/bullet_icons_sprite_20201112.png) no-repeat -69px -15px;vertical-align: top;line-height: 0;font-size: 0; overflow: hidden;margin-top:3px;margin-left:3px;"></span></dt>
+			<dd style = "float: left;width: 368px;color: #1a1a1a;font-size: 12px;line-height: 20px;font-family: 'Malgun Gothic';margin-top:5px;">
+			<span style="display: inline-block;"><%= @album.recommend %></span>
+			</dd>
+			<dt style="clear: left;float: left;width: 70px;padding-left: 2px;color: #666;font-size: 12px;line-height: 20px;margin-top:5px;">댓글</dt>
+			<dd style = "float: left;width: 368px;color: #1a1a1a;font-size: 12px;line-height: 20px;font-family: 'Malgun Gothic';margin-top:5px;">
+			<span style="display: inline-block;"><%= @album.commends.size %>개</span>
+			</dd>
 		</dl>
-			<div class="section_info" style="margin-top:17px;">
-				<span style="width: 20px;height: 17px;background-position: 0 -60px;background: url(//cdnimg.melon.co.kr/resource/image/web/common/bullet_icons_sprite_20201112.png) no-repeat -69px -15px;"></span>
-				<span style= "margin-left: 4px;line-height: 18px;color: #575757;font-size: 18px;"><%= @album.recommend %></span>
-		</div>
 		<div class="section_info" style="position: absolute;bottom: 79px;right: 30px;swidth: 195px;">
 			
 		</div>
@@ -221,7 +225,7 @@
 				<div style="float: left;width: 196px;margin-left: -235px;padding: 0 15px 0 24px;">
 					<span style="position: relative;display: inline-block;float: left;padding-right: 23px;">
 						<span style="position: relative;display: block;width: 54px;height: 54px;">
-							<img src="">
+							<img  style="position: relative;display: block;width: 54px;height: 54px;" src="<%= commend.user.profile_img %>">
 							<span style="display: inline-block;position: absolute;top: 0;left: 0;width: 54px;height: 54px;background: url(//cdnimg.melon.co.kr/resource/image/cmt/web/common/bg_frame02_54.png) no-repeat;"></span>
 						</span>
 					</span>
