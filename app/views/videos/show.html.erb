@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @video.link %>
+</p>
+
+<p>
+  <strong>Intro:</strong>
+  <%= @video.intro %>
+</p>
+
+<p>
+  <strong>Track:</strong>
+  <%= @video.track %>
+	
+</p>
+<% if @pay_t %>
+<iframe width="560" height="315" src="<%= @video.link%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<% else %>
+<iframe width="560" height="315" src="<%= @video.link%>?start=0&end=60" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<% end %>
+<%= link_to 'Edit', edit_video_path(@video) %> |
+<%= link_to 'Back', videos_path %>
