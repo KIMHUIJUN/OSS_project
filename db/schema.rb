@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_29_100025) do
+ActiveRecord::Schema.define(version: 2022_11_30_091232) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -126,9 +126,19 @@ ActiveRecord::Schema.define(version: 2022_11_29_100025) do
     t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
+  create_table "videos", force: :cascade do |t|
+    t.text "link"
+    t.text "intro"
+    t.bigint "track_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["track_id"], name: "index_videos_on_track_id"
+  end
+
   add_foreign_key "albums", "artists"
   add_foreign_key "commends", "albums"
   add_foreign_key "commends", "users"
   add_foreign_key "identities", "users"
   add_foreign_key "tracks", "albums"
+  add_foreign_key "videos", "tracks"
 end

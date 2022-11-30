@@ -184,8 +184,7 @@
 						</td>
 						<td style="border-bottom: 1px solid #f2f2f2;text-align: left;vertical-align: middle;">
 							<div style="text-align:center;">
-								<button type="button" style="width: 16px;height: 28px;background-position: 0 -30px;background-image: url(//cdnimg.melon.co.kr/resource/image/web/common/button_icons_sprite_20200521.png); background-position-y: -58px;">
-								</button>
+								<%= audio_tag track.track_play, controls: "controls" , class: "my_audio",  style: "width: 19px;height: 28px;"%>
 							</div>
 						</td>
 						<td style="border-bottom: 1px solid #f2f2f2;text-align: left;vertical-align: middle;">
@@ -218,5 +217,3 @@
 </div>
 
 <br>
-
-<%= link_to 'New Track', new_track_path %>

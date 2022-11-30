@@ -14,12 +14,12 @@
 	<div class="artist_Information" style="float:left; width:600px; margin-left:22px; margin-top:29px;">
 		<p style="leter-spacing: -1px;color: #1a1a1a; font-family:'Malgun Gothic'; font-size: 20px;line-height: 30px;">
 			<%= @track.title %></p>
-			<span style = "font-size:16px;font-weight: bold;font-color: #00b423;"><%= @track.album.artist.activity_name %></span>
+			<span style = "font-size:16px;font-weight: bold;font-color: #00b423;"><%= link_to @track.album.artist.activity_name, artist_path(@track.album.artist.id) %></span>
 		
 		<dl class = "atist_info" style = "margin-top:19px; display:block;">
 			<dt style="clear: left;float: left;width: 70px;padding-left: 2px;color: #666;font-size: 12px;line-height: 20px;">앨범</dt>
 			<dd style = "float: left;width: 368px;color: #1a1a1a;font-size: 12px;line-height: 20px;font-family: 'Malgun Gothic';">
-			<span style="display: inline-block;"><%= @track.album.title %></span>
+			<span style="display: inline-block;"><%=link_to @track.album.title, album_path(@track.album.id) %></span>
 			</dd>
 			<dt style="clear: left;float: left;width: 70px;padding-left: 2px;color: #666;font-size: 12px;line-height: 20px;margin-top:5px;">발매일</dt>
 			<dd style = "float: left;width: 368px;color: #1a1a1a;font-size: 12px;line-height: 20px;font-family: 'Malgun Gothic';margin-top:5px;">
@@ -51,8 +51,3 @@
 					</div>
 				</div>
 		</div>
-			
-
-
-<%= link_to 'Edit', edit_track_path(@track) %> |
-<%= link_to 'Back', tracks_path %>
