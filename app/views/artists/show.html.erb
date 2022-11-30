@@ -44,31 +44,38 @@
 		</dl>
 		<dl class="atist_sns" style="margin-top:11px; zoom:1; display:block;">
 			<a class="btn" href="">
-			<dt style="clear: left;float: left;width: 70px;padding-left: 2px;color: #1a1a1a;font-size: 12px;line-height: 20px;font-family: 'Malgun Gothic';">수록곡으로 가기</dt>
+			<dt style="clear: left;float: left;width: 70px;padding-left: 2px;color: #1a1a1a;font-size: 12px;line-height: 20px;font-family: 'Malgun Gothic';"> <%= link_to "수록곡으로가기",artists_show_track_path(@artist.id)%></dt>
 			</a>
 		</dl>
 			</div>
 			</div>
 			<div class="wrap_tab_atists" style="font-family: 'Malgun Gothic'; ">
 				<ul style="width: 1008px;margin-top: 15px;border-top: 2px solid #838383;border-bottom: 1px solid #dbdbdb;background: #eaefeb;list-style: none;height:34px;">
-					<li style="float: left;width: 35%; border-right: 1px solid #dbdbdb; height: 34px;">
+					<li style="float: left;width: 25%; border-right: 1px solid #dbdbdb; height: 34px;">
 						<a id = "atist_infor"style ="display: block;position: relative;padding: 10px 0 7px 0px;color: #1b1b1b;text-align: center;">
 						<span style ="color: #1b1b1b; ">
-							<span style = "text-align: center; top: 9px; width: 20px; height: 20px;">상세 정보</span>
+							<span style = "text-align: center; top: 9px; width: 20px; height: 20px;"><%= link_to "상세 정보", artist_path(@artist.id)%></span>
 							</span>
 						</a>
 					</li>
-					<li style=" float: left;width: 30%; border-right: 1px solid #dbdbdb; height: 34px;">
+					<li style=" float: left;width: 25%; border-right: 1px solid #dbdbdb; height: 34px;">
 						<a href = "" style ="display: block;position: relative;padding: 10px 0 7px 0px;color: #1b1b1b;text-align: center;">
 						<span style ="color: #1b1b1b; text-align: center;">
-							<span style = "top: 9px; width: 20px; height: 20px;">수록곡</span>
+							<span style = "top: 9px; width: 20px; height: 20px;"><%= link_to "수록곡" , artists_show_track_path(@artist.id)%></span>
 							</span>
 						</a>
 					</li>
-					<li style=" float: left;width: 34%; height: 34px;">
+					<li style=" float: left;width: 25%; height: 34px;border-right: 1px solid #dbdbdb;">
 						<a href = "" style ="display: block;position: relative;padding: 10px 0 0px 0px;color: #1b1b1b;text-align: center;">
 						<span style ="color: #1b1b1b; text-align: center;">
-							<span style = "top: 9px; width: 18px; height: 20px;">앨범</span>
+							<span style = "top: 9px; width: 18px; height: 20px;"><%= link_to "앨범", artists_show_album_path(@artist.id)%></span>
+							</span>
+						</a>
+					</li>
+					<li style=" float: left;width: 24%; height: 34px;">
+						<a href = "" style ="display: block;position: relative;padding: 10px 0 0px 0px;color: #1b1b1b;text-align: center;">
+						<span style ="color: #1b1b1b; text-align: center;">
+							<span style = "top: 9px; width: 18px; height: 20px;"><%= link_to "비디오", artists_show_video_path(@artist.id)%></span>
 							</span>
 						</a>
 					</li>
@@ -137,5 +144,3 @@
 
 
 <br>
-<%= link_to 'Edit', edit_artist_path(@artist) %> |
-<%= link_to 'Back', artists_path %>

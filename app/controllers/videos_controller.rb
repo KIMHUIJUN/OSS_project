@@ -12,7 +12,7 @@ class VideosController < ApplicationController
 	  @pay_t = Payuser.where(user_id: current_user.id).size > 0 
   	  @payuser = Payuser.new
 	  @tracks = Track.all
-	   @videos = Video.all
+	  @videos = Video.all
   end
 
   # GET /videos/new
