@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
 
  before_action :configure_permitted_parameters, if: :devise_controller?
-
+    @payuser = Payuser.new
+    @payusers = Payuser.all
   protected
 
   def configure_permitted_parameters

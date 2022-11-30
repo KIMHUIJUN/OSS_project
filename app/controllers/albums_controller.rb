@@ -4,6 +4,7 @@ class AlbumsController < ApplicationController
   # GET /albums or /albums.json
   def index
     @albums = Album.all
+	@payuser = Payuser.new
   end
 
   # GET /albums/1 or /albums/1.json
@@ -12,6 +13,7 @@ class AlbumsController < ApplicationController
 	  @commends = Commend.where(album_id: @album.id)
 	  @commend = Commend.new
 	  @users = User.all		
+	  @payuser = Payuser.new
   end
 
   # GET /albums/new

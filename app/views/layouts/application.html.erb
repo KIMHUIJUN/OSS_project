@@ -3,6 +3,9 @@
   <html lang="ko">
 	
 	<head>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src= "https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+	
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -50,8 +53,11 @@
 					<div class="top_right ">
 						<ul class="clfix" style="float:left;">
 							
+
+							<% if user_signed_in? %>
+							
 							<li class="user_id_hidden" style="position: relative;float: left;margin: 0 7px 0 0; padding-left: 9px;height: 35px; width:93px;">
-								<a href=""style="display: inline-block;padding: 11px 7px;vertical-align: top;" title="이용권구매" class="menu01 mlog" ><span>이용권구매</span></a></li>
+								<button id = "check_module" type="button"style="display: inline-block;padding: 11px 7px;vertical-align: top;"> 이용권구매</button></li>
 							
 							<li class="user_id_hidden" style="position: relative;float: left;margin: 0 7px 0 0; padding-left: 9px;height: 35px; width:77px;">
 								<a href="/event/vip/index.htm"style="display: inline-block;padding: 11px 7px;vertical-align: top;" title="멜론라운지" class="menu02 mlog" ><span>멜론라운지</span></a></li>
@@ -62,9 +68,6 @@
 							<li class="user_id_hidden" style="position: relative;float: left;margin: 0 7px 0 0; padding-left: 9px;height: 35px; width:67px;">
 								<a href="/customer/announce/index.htm" title="공지사항" class="menu04 mlog" style="display: inline-block;padding: 11px 7px;vertical-align: top;"><span>공지사항</span></a></li>
 							
-							<!-- 로그인시 나타나는 유저 아이디 -->
-						
-							  <% if user_signed_in? %>
 							<li class="user_id_hidden" style="position: relative;float: left;margin: 0 7px 0 0; height: 35px; width:60px;">
 							<span style="display: inline-block;padding: 11px 7px;">
 							<h3 style=" width:100px; height:12px;"><%= current_user.name%>님</h3>
@@ -75,6 +78,24 @@
 							<h3 style=" width:200px; height:12px;"> <%= link_to("로그아웃", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } )%></h3>
 							</span>
 							</li>
+							<% else %>
+							<li class="user_id_hidden" style="position: relative;float: left;margin: 0 7px 0 0; padding-left: 9px;height: 35px; width:93px;">
+								<span style="display: inline-block;">
+							<h3 style=" width:200px; height:12px;"> <%= link_to("이용권구매", new_user_session_path ) %></h3>
+							</span>
+							</li>
+								
+							
+								
+							<li class="user_id_hidden" style="position: relative;float: left;margin: 0 7px 0 0; padding-left: 9px;height: 35px; width:77px;">
+								<a href="/event/vip/index.htm"style="display: inline-block;padding: 11px 7px;vertical-align: top;" title="멜론라운지" class="menu02 mlog" ><span>멜론라운지</span></a></li>
+							
+							<li class="user_id_hidden" style="position: relative;float: left;margin: 0 7px 0 0; padding-left: 9px;height: 35px; width:55px;">
+								<a href="/event/index.htm" title="이벤트" class="menu03 mlog" style="display: inline-block;padding: 11px 7px;vertical-align: top;"><span>이벤트</span></a></li>
+							
+							<li class="user_id_hidden" style="position: relative;float: left;margin: 0 7px 0 0; padding-left: 9px;height: 35px; width:67px;">
+								<a href="/customer/announce/index.htm" title="공지사항" class="menu04 mlog" style="display: inline-block;padding: 11px 7px;vertical-align: top;"><span>공지사항</span></a></li>
+							
 							<% end %>
 						</ul>
 					
@@ -85,7 +106,7 @@
 
 				<!-- 140603_수정 -->
 				
-				<h1><a href="/index.htm" title="MelOn 로고 - 홈으로 이동" class="mlog" ><img width="142" height="99" src="https://cdnimg.melon.co.kr/resource/image/web/common/logo_melon142x99.png" alt="Melon"></a></h1>
+				<h1><a href="/" title="MelOn 로고 - 홈으로 이동" class="mlog" ><img width="142" height="99" src="https://cdnimg.melon.co.kr/resource/image/web/common/logo_melon142x99.png" alt="Melon"></a></h1>
 
 				<!-- //140603_수정 -->
 				<!-- 통합검색 영역 -->
@@ -167,7 +188,7 @@
 				<ul>
 					<li class="nth1">
 						
-						<a href="/chart/index.htm" class="cur_menu mlog" data="LOG_PRT_CODE=1&amp;MENU_PRT_CODE=0&amp;MENU_ID_LV1=&amp;CLICK_AREA_PRT_CODE=R01&amp;ACTION_AF_CLICK=V1"><span class="cur_status none">현재 선택된 메뉴-</span><span class="menu_bg menu01">멜론차트</span></a>
+						<a href="/tracks" class="cur_menu mlog" data="LOG_PRT_CODE=1&amp;MENU_PRT_CODE=0&amp;MENU_ID_LV1=&amp;CLICK_AREA_PRT_CODE=R01&amp;ACTION_AF_CLICK=V1"><span class="cur_status none">현재 선택된 메뉴-</span><span class="menu_bg menu01">멜론차트</span></a>
 					</li>
 					<li class="nth2">
 						
@@ -205,12 +226,22 @@
 						<a href="/edu/index.htm" class="cur_menu mlog" data="LOG_PRT_CODE=1&amp;MENU_PRT_CODE=0&amp;MENU_ID_LV1=&amp;CLICK_AREA_PRT_CODE=C04&amp;ACTION_AF_CLICK=V1"><span class="cur_status none">현재 선택된 메뉴-</span><span class="menu_bg menu10">어학</span></a>
 					</li>
 				</ul>
+			    <% if user_signed_in? %>
+				
 				<ul class="sub_gnb">
+					
 					<li class="">
-						
 						<a href="javascript:MELON.WEBSVC.POC.menu.goMyMusicMain();" class="cur_menu mlog" data="LOG_PRT_CODE=1&amp;MENU_PRT_CODE=0&amp;MENU_ID_LV1=&amp;CLICK_AREA_PRT_CODE=S01&amp;ACTION_AF_CLICK=V1"><span class="cur_status none">현재 선택된 메뉴-</span><span class="menu_bg menu09">마이뮤직</span></a>
 					</li>
 				</ul>
+				<!-- <ul class="sub_gnb">
+					
+					<li class="">
+						<button id = "check_module" type="button"style="display: inline-block;padding: 11px 7px;vertical-align: top;"> 마이뮤직</button></li>
+					
+				</ul>
+				 -->
+				<%end%>
 			</div>
             <!-- //140314_gnb마크업 수정 -->
 		</div>
@@ -221,7 +252,77 @@
 <%= javascript_include_tag "application" %>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-
+<% if user_signed_in? %>
+	  <%= render "payusers/form" , payuser: @payuser %>
+<% end %>
+<script>
+    $("#check_module").click(function () {
+        var IMP = window.IMP; // 생략가능
+        IMP.init('imp03146600'); 
+        // 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
+        // i'mport 관리자 페이지 -> 내정보 -> 가맹점식별코드
+        IMP.request_pay({
+            pg: 'kakaopay.TC0ONETIME', // version 1.1.0부터 지원.
+            /* 
+                'kakao':카카오페이, 
+                html5_inicis':이니시스(웹표준결제)
+                    'nice':나이스페이
+                    'jtnet':제이티넷
+                    'uplus':LG유플러스
+                    'danal':다날
+                    'payco':페이코
+                    'syrup':시럽페이
+                    'paypal':페이팔
+                */
+            pay_method: 'card',
+            /* 
+                'samsung':삼성페이, 
+                'card':신용카드, 
+                'trans':실시간계좌이체,
+                'vbank':가상계좌,
+                'phone':휴대폰소액결제 
+            */
+            merchant_uid: 'merchant_' + new Date().getTime(),
+            /* 
+                merchant_uid에 경우 
+                https://docs.iamport.kr/implementation/payment
+                위에 url에 따라가시면 넣을 수 있는 방법이 있습니다.
+                참고하세요. 
+                나중에 포스팅 해볼게요.
+             */
+            name: 'Melon: 개발자 희준',
+            //결제창에서 보여질 이름
+            amount: 100, 
+            //가격 
+            buyer_email: 'iamport@siot.do',
+            buyer_name: '구매자이름',
+            buyer_tel: '010-1234-5678',
+            buyer_addr: '서울특별시 강남구 삼성동',
+            buyer_postcode: '123-456',
+            m_redirect_url: 'https://www.yourdomain.com/payments/complete'
+            /*  
+                모바일 결제시,
+                결제가 끝나고 랜딩되는 URL을 지정 
+                (카카오페이, 페이코, 다날의 경우는 필요없음. PC와 마찬가지로 callback함수로 결과가 떨어짐) 
+                */
+        }, function (rsp) {
+            console.log(rsp);
+            if (rsp.success) {
+                var msg = '결제가 완료되었습니다.';
+                msg += '고유ID : ' + rsp.imp_uid;
+                msg += '상점 거래ID : ' + rsp.merchant_uid;
+                msg += '결제 금액 : ' + rsp.paid_amount;
+                msg += '카드 승인번호 : ' + rsp.apply_num;
+            } else {
+                var msg = '결제에 실패하였습니다.';
+                msg += '에러내용 : ' + rsp.error_msg;
+            }
+            //alert(msg);
+			$("#payment_form").submit();
+        });
+    });
+	</script>
+	  
     <%= yield %>
   </body>
 </html>

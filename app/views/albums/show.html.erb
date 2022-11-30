@@ -161,7 +161,7 @@
 									</div>
 									<br>
 									<div style="max-width: 220px;">
-										<span style="color: #969696; font-size: 12px;"><%=link_to @album.artist.real_name, artist_path(@album.artist.id)%></span>
+
 									</div>
 								</div>	
 							</div>
@@ -205,38 +205,44 @@
 	
 			</table>
 		</div>
-	</div>
-</div>
- 
-<% if user_signed_in? %>
+				<% if user_signed_in? %>
 	
 <%= render 'commends/form', commend: @commend %>
 <%end%>
-<h4>
-	댓글 <%= @commends.size %> 개
+<h4 style="border-bottom: 1px solid #ccc;">
+	총 <%= @commends.size %> 개
 </h4>
-<table>
-  <thead>
-    <tr>
-	  <th>작성자</th>
-  	  <th>Commend</th>
-  
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @commends.each do |commend| %>
-	  <tr>
-		  <td><%= commend.user.name %></td>
-
-		  <td><%= commend.commend %></td>
-
-	  </tr>
-    <% end %>
-  </tbody>
-</table>
-
+		 <% @commends.each do |commend| %>
+<div style="position:relative; z-index:20; border:1px solid #ccc; border-right:0; border-left:0;">
+	<div style="padding: 45px 0 50px;">
+	<ul>
+		<li>
+			<div class="commend" style="display: block;position: relative;padding: 15px 0 7px;padding-left: 235px;">
+				<div style="float: left;width: 196px;margin-left: -235px;padding: 0 15px 0 24px;">
+					<span style="position: relative;display: inline-block;float: left;padding-right: 23px;">
+						<span style="position: relative;display: block;width: 54px;height: 54px;">
+							<img src="">
+							<span style="display: inline-block;position: absolute;top: 0;left: 0;width: 54px;height: 54px;background: url(//cdnimg.melon.co.kr/resource/image/cmt/web/common/bg_frame02_54.png) no-repeat;"></span>
+						</span>
+					</span>
+					<div style="float:left;width:auto;margin-top:20px;max-width: 70px;color: #4c4c4c;display: inline-block;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
+						<span><%= commend.user.name %></span>
+					</div>
+				</div>
+				<div style="word-break: break-all; color: #555;">
+					<div style="hyphens: auto;display: block;">
+						<span style="padding-right: 24px; font-size: 12px;"></span>
+					</div>
+					<%= commend.commend %>
+				</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+	</div>
+	   <% end %>
+	</div>
+</div>
 <br>
 <%= link_to 'Edit', edit_album_path(@album) %> |
 <%= link_to 'Back', albums_path %>

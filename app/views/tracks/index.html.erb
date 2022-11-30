@@ -160,7 +160,8 @@
 									</div>
 									<br>
 									<div style="max-width: 220px;">
-										<span style="color: #969696; font-size: 12px;"><%= track.album.artist.activity_name%></span>
+
+										<span style="color: #969696; font-size: 12px;"><%= link_to track.album.artist.activity_name, artist_path(track.album.artist.id) %></span>
 									</div>
 								</div>	
 							</div>
@@ -168,7 +169,7 @@
 						<td style="border-bottom:1px solid #f2f2f2;vertical-align: middle;">
 							<div style="display: inline-block;width: 100%;margin-left: 12px;vertical-align: middle;">
 								<div style="max-width:170px;display: inline-block;padding-right: 1px;vertical-align: middle;white-space: nowrap;text-overflow: ellipsis;word-wrap: normal;overflow: hidden;">
-									<span style="color: #969696;font-size: 14px;"><%= track.album.title%></span>
+									<span style="color: #969696;font-size: 14px;"><%= link_to track.album.title, album_path(track.album.id) %></span>
 								</div>
 							</div>
 						</td>
@@ -215,22 +216,6 @@
 	</div>
 	
 </div>
-<table>
-  <tbody>
-    <% @tracks.each do |track| %>
-      <tr>
-        <td><%= link_to track.title, track %></td>
-        <td><%= track.recommend %></td>
-        <td><%= track.flac %></td>
-        <td><%= track.genre %></td>
-        <td><%= link_to track.album.title, album_path(track.album.id) %></td>
-        <td><%= link_to 'Show', track %></td>
-        <td><%= link_to 'Edit', edit_track_path(track) %></td>
-        <td><%= link_to 'Destroy', track, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 

@@ -119,8 +119,13 @@
 							<div class="music_used" style="border-top: 1px solid #d8dadb;">
 								<strong style="    display: block;margin: 0 15px;padding: 14px 0 7px 7px;background: url(//cdnimg.melon.co.kr/resource/image/web/main/bg_dot_01.png) no-repeat left 21px;font-weight: normal;vertical-align: top;">
 								<span style="display:block;"></span>
+									<% if @pay_t%>
 									<strong style="    display: inline-block;width: auto;max-width: 190px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;vertical-align: top;"><span>스트리밍클럽</span></strong>사용중
 								</strong>
+								<% else%>
+								<strong style="    display: inline-block;width: auto;max-width: 190px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;vertical-align: top;"><span>결제 후 </span></strong> 이용 가능
+								</strong>
+								<%end%>
 								<ul style="overflow: hidden;zoom: 1;padding-left: 15px;padding-top: 7px;">
 									<li style="width:82px;float: left;padding: 0 10px;background: url(//cdnimg.melon.co.kr/resource/image/web/main/bg_dot_01.png) no-repeat left 5px;line-height: 13px;">
 									<span style="color: #888;line-height: 0;">
@@ -646,4 +651,4 @@
 			</div>
 			
 		</div>
-	</div>
+
