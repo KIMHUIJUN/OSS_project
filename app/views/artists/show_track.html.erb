@@ -60,8 +60,8 @@
 					</li>
 					<li style=" float: left;width: 25%; border-right: 1px solid #dbdbdb; height: 34px;">
 						<span href = "" style ="display: block;position: relative;padding: 10px 0 7px 0px;color: #1b1b1b;text-align: center;">
-						<span style ="color: #1b1b1b; text-align: center;top: 9px; width: 20px; height: 20px;">
-							<%= link_to "수록곡" , artists_show_track_path(@artist.id)%>
+						<span style ="color: #1b1b1b; text-align: center;">
+							<span style = "top: 9px; width: 20px; height: 20px;"><%= link_to "수록곡" , artists_show_track_path(@artist.id)%></span>
 							</span>
 						</span>
 					</li>
@@ -82,65 +82,25 @@
 				</ul>
 			</div>
 			<div class="info">
-				<h3 style = "padding-left: 11px; margin-bottom:16px; border-bottom: 1px solid #e6e6e6; padding-top: 33px;padding-bottom: 12px;color: #1a1a1a; font-weight: bold;font-size: 18px;line-height: 24px;">수상이력</h3>
-				<div  class = "atist_insdc"style = "width: 100%;color: #1a1a1a;font-size: 12px;line-height: 20px;word-break: break-all; overflow: hidden;">
-					<%= @artist.award_history %>
-				</div>
-				<h3 style = "padding-left: 11px; margin-bottom:16px; border-bottom: 1px solid #e6e6e6; padding-top: 33px;padding-bottom: 12px;color: #1a1a1a; font-weight: bold;font-size: 18px;line-height: 24px;">아티스트 소개</h3>
-				<div  class = "atist_insdc"style = "width: 100%;color: #1a1a1a;font-size: 12px;line-height: 20px;word-break: break-all; overflow: hidden;">
-					<%= @artist.intro %>
-				</div>
-				<h3 style = "padding-left: 11px; margin-bottom:16px; border-bottom: 1px solid #e6e6e6; padding-top: 33px;padding-bottom: 12px;color: #1a1a1a; font-weight: bold;font-size: 18px;line-height: 24px;">활동정보</h3>
-				<div  class = "atist_insdc"style = "width: 100%;color: #1a1a1a;font-size: 12px;line-height: 20px;word-break: break-all; overflow: hidden;">
-					<dl class = "atist_info" style = " display:block;">
-			<dt style="clear: left;float: left;width: 70px;padding-left: 2px;color: #666;font-size: 12px;">데뷔</dt>
-			<dd style = "float: left;width: 368px;color: #1a1a1a;font-size: 12px;line-height: 20px;font-family: 'Malgun Gothic';">
-			<span style="display: inline-block;"><%= @artist.debut_day %></span>
-			</dd>
-			<dt style="clear: left;float: left;width: 70px;padding-left: 2px;color: #666;font-size: 12px;line-height: 20px;">생일</dt>
-			<dd style = "foat: left;width: 368px;color: #1a1a1a;font-size: 12px;line-height: 20px;font-family: 'Malgun Gothic';">
-			<span style="display: inline-block;"><%= @artist.birth_day %></span>
-			</dd>
-			<dt style="clear: left;float: left;width: 70px;padding-left: 2px;color: #666;font-size: 12px;line-height: 20px;">활동유형</dt>
-			<dd style = "float: left;width: 368px;color: #1a1a1a;font-size: 12px;line-height: 20px;font-family: 'Malgun Gothic';">
-			<span style="display: inline-block;"><%= @artist.activity_type %></span>
-			</dd><dt style="clear: left;float: left;width: 70px;padding-left: 2px;color: #666;font-size: 12px;line-height: 20px;">장르</dt>
-			<dd style = "float: left;width: 368px;color: #1a1a1a;font-size: 12px;line-height: 20px;font-family: 'Malgun Gothic';">
-			<span style="display: inline-block;"><%= @artist.genre%></span>
-			</dd>
-			<dt style="clear: left;float: left;width: 70px;padding-left: 2px;color: #666;font-size: 12px;line-height: 20px;">소속사</dt>
-			<dd style = "float: left;width: 368px;color: #1a1a1a;font-size: 12px;line-height: 20px;font-family: 'Malgun Gothic';">
-			<span style="display: inline-block;"><%= @artist.agency %></span>
-			</dd>
-		</dl>
+				<% @ar_albums.each do |album| %>
+				
+					<% @tracks.each do |track| %>
 					
-				</div>
-				<h3 style = "padding-left: 11px; margin-bottom:16px; border-bottom: 1px solid #e6e6e6; padding-top: 33px;padding-bottom: 12px;color: #1a1a1a; font-weight: bold;font-size: 18px;line-height: 24px;">신상정보</h3>
-				<div  class = "atist_insdc"style = "width: 100%;color: #1a1a1a;font-size: 12px;line-height: 20px;word-break: break-all; overflow: hidden;">
-					<dl class = "atist_info" style = " display:block;">
-			<dt style="clear: left;float: left;width: 70px;padding-left: 2px;color: #666;font-size: 12px;">본명</dt>
-			<dd style = "float: left;width: 368px;color: #1a1a1a;font-size: 12px;line-height: 20px;font-family: 'Malgun Gothic';">
-			<span style="display: inline-block;"><%= @artist.real_name %></span>
-			</dd>
-			<dt style="clear: left;float: left;width: 70px;padding-left: 2px;color: #666;font-size: 12px;line-height: 20px;">별명</dt>
-			<dd style = "foat: left;width: 368px;color: #1a1a1a;font-size: 12px;line-height: 20px;font-family: 'Malgun Gothic';">
-			<span style="display: inline-block;"><%= @artist.nickname %></span>
-			</dd>
-			<dt style="clear: left;float: left;width: 70px;padding-left: 2px;color: #666;font-size: 12px;line-height: 20px;">국적</dt>
-			<dd style = "float: left;width: 368px;color: #1a1a1a;font-size: 12px;line-height: 20px;font-family: 'Malgun Gothic';">
-			<span style="display: inline-block;"><%= @artist.nationality %></span>
-			</dd><dt style="clear: left;float: left;width: 70px;padding-left: 2px;color: #666;font-size: 12px;line-height: 20px;">생일</dt>
-			<dd style = "float: left;width: 368px;color: #1a1a1a;font-size: 12px;line-height: 20px;font-family: 'Malgun Gothic';">
-			<span style="display: inline-block;"><%= @artist.birth_day%></span>
-			</dd>
-		</dl>
-				</div>
+						<% if album.id == track.album_id %>
+							<%= track.title %>
+							<br>
+						
+				
+				
+				
+				
+				
+				
+				
+				
+				
+						<%end%>
+					<%end%>
+				<%end%>
 			</div>
 
-			</div>
-		</div>
-	</div>
-
-
-
-<br>

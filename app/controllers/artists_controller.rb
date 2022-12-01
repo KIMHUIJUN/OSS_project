@@ -11,10 +11,33 @@ class ArtistsController < ApplicationController
   def show
 	  @payuser = Payuser.new
   end
-
+  def show_track
+	  @payuser = Payuser.new
+	  @artist = Artist.find(params[:id])
+	  @albums = Album.all
+	  @ar_albums = Album.where(artist_id: @artist.id)
+	  @tracks = Track.all
+  end
+  
+  def show_album
+	  @payuser = Payuser.new
+	  @artist = Artist.find(params[:id])
+	  @albums = Album.all
+	  @ar_albums = Album.where(artist_id: @artist.id) 
+  end
+  def show_video
+	  @payuser = Payuser.new
+	  @artist = Artist.find(params[:id])
+	  @albums = Album.all
+	  @ar_albums = Album.where(artist_id: @artist.id)
+	  @tracks = Track.all
+	  @videos = Video.all
+	  @pay_t = Payuser.where(user_id: current_user.id).size > 0 
+  end
   # GET /artists/new
   def new
     @artist = Artist.new
+	  @artist = Artist.find(params[:id])
   end
 
   # GET /artists/1/edit
