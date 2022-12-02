@@ -15,7 +15,9 @@ class AlbumsController < ApplicationController
 	  @users = User.all		
 	  @payuser = Payuser.new
 	  @videos = Video.all
-	  @pay_t = Payuser.where(user_id: current_user.id).size > 0 
+	  if user_signed_in? 
+		@pay_t = Payuser.where(user_id: current_user.id).size > 0
+	  end
 	  
   end
 

@@ -7,6 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,:confirmable,:omniauthable
   has_many :identities, dependent: :destroy
   has_many :commends, dependent: :destroy
+  has_many :tracks, :through => :play_lists
  # after_create :set_default_role, if: Proc.new { User.count > 1 }
 
   TEMP_EMAIL_PREFIX = 'change@me'

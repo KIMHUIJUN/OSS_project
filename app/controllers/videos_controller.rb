@@ -9,7 +9,10 @@ class VideosController < ApplicationController
 
   # GET /videos/1 or /videos/1.json
   def show
-	  @pay_t = Payuser.where(user_id: current_user.id).size > 0 
+	  
+	  if user_signed_in? 
+		@pay_t = Payuser.where(user_id: current_user.id).size > 0
+	  end
   	  @payuser = Payuser.new
 	  @tracks = Track.all
 	  @videos = Video.all

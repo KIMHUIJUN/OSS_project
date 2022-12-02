@@ -130,7 +130,9 @@
 					<tr style="display: table-row;">
 						<td style="height:84px; border-bottom:1px solid #f2f2f2; text-algin:left; vertical-algin:middle;">
 							<div style = "text-algin: right; margin-top:31px;">
+								
 								<input type="checkbox" style="border: initial;background-color: initial;cursor: default;appearance: auto;box-sizing: border-box; vertical-algin:middle;" >
+								
 							</div>
 						</td>
 						<td style="text-align: left; vertical-align: middle; height:84px; border-bottom:1px solid #f2f2f2;">
@@ -189,8 +191,12 @@
 						</td>
 						<td style="border-bottom: 1px solid #f2f2f2;text-align: left;vertical-align: middle;">
 							<div style="text-align:center;">
+								<%if user_signed_in? %> 
+								<%= button_to "+" , play_lists_path(play_list: {user_id: current_user.id, track_id: track.id} ,style:"width: 19px;height: 28px;background-position: -45px -30px;") %>
+								<% else %>
 								<button type="button" style="width: 19px;height: 28px;background-position: -45px -30px;background-position-y: -58px;background-image: url(//cdnimg.melon.co.kr/resource/image/web/common/button_icons_sprite_20200521.png);">
 								</button>
+								<%end%>
 							</div>
 						</td>
 						<td style="border-bottom: 1px solid #f2f2f2;text-align: left;vertical-align: middle;">

@@ -32,7 +32,10 @@ class ArtistsController < ApplicationController
 	  @ar_albums = Album.where(artist_id: @artist.id)
 	  @tracks = Track.all
 	  @videos = Video.all
-	  @pay_t = Payuser.where(user_id: current_user.id).size > 0 
+		
+	  if user_signed_in? 
+		@pay_t = Payuser.where(user_id: current_user.id).size > 0
+	  end
   end
   # GET /artists/new
   def new
