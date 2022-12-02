@@ -81,8 +81,54 @@
 					</li>
 				</ul>
 			</div>
-			<div class="info">
-				<% @ar_albums.each do |album| %>
-					<%= album.title%>
-				<%end%>
+			
+			<div class="section_cont" style="border-bottom:1px solid #1a1a1a;">
+				<div class="sort_info" style="padding:24px 0 30px; ">
+					<div class="wrap_sort" style=" float:left; color: #1a1a1a;">
+						<h5 style="margin-right:8px; color: #1a1a1a;text-decoration: none; font-size:20px;">전체앨범</h5>
+					</div>
+				</div>
+			</div>
+				<div>
+			<div class="page_list margin-top:10px;">
+				<div class = "list_albums" style="border-bottom: 1px solid #ccc;background: url(//cdnimg.melon.co.kr/resource/image/web/common/bg_list_album11.png) repeat 0 0;">
+					<% @ar_albums.each do |album| %>
+					<ul style="margin-bottom: -1px;">
+						<li style="float: left;width: 320px;margin: 0 16px 0 0;padding: 16px 0 17px;border-bottom: 1px solid #ccc;">
+							<div style="position:relative;">
+								<span style="display: block;position: absolute;width: 130px;height: 130px;text-decoration: none;">
+									<span style="    position: absolute;top: 0;left: 0;width: 130px;height: 130px;background: url(//cdnimg.melon.co.kr/resource/image/web/common/bg_frame_album04.png) no-repeat 0 0;"></span>
+									<img style=" width: 130px;aspect-ratio: auto 130 / 130;height: 130px;" src="<%= album.album_link %>">
+								</span>
+								<div style="height: 130px; padding: 0 0 0 146px;">
+									<dl>
+										<dt style="height: 30px;padding: 2px 0 0;font-weight: bold;font-size: 12px;line-height: 14px;color: #1a1a1a;">
+										<span style="    display: inline-block;width: auto;max-width: 100%;color: #555;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"><%= album.title %></span>
+										</dt>
+										<dd style="display: block;width: 100%;color: #79a54c;white-space: nowrap;text-overflow: ellipsis;"> <%= album.artist.activity_name %></dd>
+										<dd style="margin: 3px 0 0;height: 17px; margin-top:63px;">
+											<span style="color: #777;font-size: 12px;line-height: 14px;"><%= album.release_day%></span>
+											<em style="color: #d9d9d9;font-style: normal;font-size: 11px;line-height: 14px;">|</em>
+											<span style="color: #777;font-size: 12px;line-height: 14px;"><%= album.tracks.size %>곡</span>
+											<em style="color: #d9d9d9;font-style: normal;font-size: 11px;line-height: 14px;">|</em>
+											<div style="display: inline-block;position: relative;padding-left: 15px;color: #777 !important;font-size: 12px;line-height: 14px;">
+											<span style="display: block;position: absolute;top: 2px;left: 0;width: 11px;height: 10px;
+    background: url(//cdnimg.melon.co.kr/resource/image/web/common/bg_sprite_like.png) no-repeat 0 0;font-size: 0;line-height: 0;"></span>
+											<%= album.recommend %>
+											</div>
+										</dd>
+									</dl>
+								</div>
+							</div>
+						</li>
+						
+					</ul>
+					<%end%>
+					
+				</div>
+			</div>
+		
 	</div>
+
+			
+				
