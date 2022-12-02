@@ -44,7 +44,7 @@
 		</dl>
 		<dl class="atist_sns" style="margin-top:11px; zoom:1; display:block;">
 			<a class="btn" href="">
-			<dt style="clear: left;float: left;width: 70px;padding-left: 2px;color: #1a1a1a;font-size: 12px;line-height: 20px;font-family: 'Malgun Gothic';"> <%= link_to "수록곡으로가기",artists_show_track_path(@artist.id)%></dt>
+			<dt style="clear: left;float: left;width: 90px;padding-left: 2px;color: #1a1a1a;font-size: 12px;line-height: 20px;font-family: 'Malgun Gothic';"> <%= link_to "수록곡으로가기",artists_show_track_path(@artist.id)%></dt>
 			</a>
 		</dl>
 			</div>
@@ -52,36 +52,46 @@
 			<div class="wrap_tab_atists" style="font-family: 'Malgun Gothic'; ">
 				<ul style="width: 1008px;margin-top: 15px;border-top: 2px solid #838383;border-bottom: 1px solid #dbdbdb;background: #eaefeb;list-style: none;height:34px;">
 					<li style="float: left;width: 25%; border-right: 1px solid #dbdbdb; height: 34px;">
-						<a id = "atist_infor"style ="display: block;position: relative;padding: 10px 0 7px 0px;color: #1b1b1b;text-align: center;">
+						<span id = "atist_infor"style ="display: block;position: relative;padding: 10px 0 7px 0px;color: #1b1b1b;text-align: center;">
 						<span style ="color: #1b1b1b; ">
 							<span style = "text-align: center; top: 9px; width: 20px; height: 20px;"><%= link_to "상세 정보", artist_path(@artist.id)%></span>
 							</span>
-						</a>
+						</span>
 					</li>
 					<li style=" float: left;width: 25%; border-right: 1px solid #dbdbdb; height: 34px;">
-						<a href = "" style ="display: block;position: relative;padding: 10px 0 7px 0px;color: #1b1b1b;text-align: center;">
+						<span href = "" style ="display: block;position: relative;padding: 10px 0 7px 0px;color: #1b1b1b;text-align: center;">
 						<span style ="color: #1b1b1b; text-align: center;">
 							<span style = "top: 9px; width: 20px; height: 20px;"><%= link_to "수록곡" , artists_show_track_path(@artist.id)%></span>
 							</span>
-						</a>
+						</span>
 					</li>
 					<li style=" float: left;width: 25%; height: 34px;border-right: 1px solid #dbdbdb;">
-						<a href = "" style ="display: block;position: relative;padding: 10px 0 0px 0px;color: #1b1b1b;text-align: center;">
+						<span href = "" style ="display: block;position: relative;padding: 10px 0 0px 0px;color: #1b1b1b;text-align: center;">
 						<span style ="color: #1b1b1b; text-align: center;">
 							<span style = "top: 9px; width: 18px; height: 20px;"><%= link_to "앨범", artists_show_album_path(@artist.id)%></span>
 							</span>
-						</a>
+						</span>
 					</li>
 					<li style=" float: left;width: 24%; height: 34px;">
-						<a href = "" style ="display: block;position: relative;padding: 10px 0 0px 0px;color: #1b1b1b;text-align: center;">
+						<span href = "" style ="display: block;position: relative;padding: 10px 0 0px 0px;color: #1b1b1b;text-align: center;">
 						<span style ="color: #1b1b1b; text-align: center;">
 							<span style = "top: 9px; width: 18px; height: 20px;"><%= link_to "비디오", artists_show_video_path(@artist.id)%></span>
 							</span>
-						</a>
+						</span>
 					</li>
 				</ul>
 			</div>
 			<div class="info">
+			<div class="section_cont" style="border-bottom:1px solid #1a1a1a;">
+				<div class="sort_info" style="padding:24px 0 30px; ">
+					<div class="wrap_sort" style=" float:left; color: #1a1a1a;">
+						<h5 style="margin-right:8px; color: #1a1a1a;text-decoration: none; font-size:20px;">비디오</h5>
+					</div>
+				</div>
+			</div>
+					<div class="page_list margin-top:10px;">
+				<div class = "list_albums" style="">
+			<ul style="margin-bottom: -1px;margin: 0 0 20px 5px;">
 				<% @ar_albums.each do |album| %>
 				
 					<% @tracks.each do |track| %>
@@ -90,15 +100,34 @@
 							<% @videos.each do |video| %>
 								<% if track.id == video.track_id %>
 										<% if @pay_t %>
-											<iframe width="560" height="315" src="<%= video.link%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<li style=" float: left;margin-left:10px;">
+									<iframe width="320" height="230" src="<%= video.link%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									<p style="font-size:14px;"> <%= link_to video.track.title, video_path(video.id)%></p>
+									<p style="font-size:14px;"> <%= link_to video.track.album.artist.activity_name, artist_path(video.track.album.artist.id), style:"color: #00b423;"%></p>
+										
+									<span style="display: inline-block;position: relative;top: 1px;width: 14px;height: 12px;background: url(//cdnimg.melon.co.kr/resource/image/web/common/bullet_icons_sprite_20201112.png) no-repeat -69px -15px;vertical-align: top;line-height: 0;font-size: 0;">
+										</span>	
+									<span style="color: #888;line-height: 14px;font-size: 12px;letter-spacing: 0;vertical-align: top;"><%=  video.track.recommend%></span>
+									</li>
+					
 										<% else %>
-											<iframe width="560" height="315" src="<%= video.link%>?start=0&end=60" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+											<li style="float: left;margin-left:10px;">
+									<iframe width="320" height="230" src="<%= video.link%>?start=0&end=60" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									<p style="font-size:14px;"> <%= link_to video.track.title, video_path(video.id)%></p>
+									<p style="font-size:14px;"> <%= link_to video.track.album.artist.activity_name, artist_path(video.track.album.artist.id), style:"color: #00b423;"%></p>
+										
+									<span style="display: inline-block;position: relative;top: 1px;width: 14px;height: 12px;background: url(//cdnimg.melon.co.kr/resource/image/web/common/bullet_icons_sprite_20201112.png) no-repeat -69px -15px;vertical-align: top;line-height: 0;font-size: 0;">
+										</span>	
+									<span style="color: #888;line-height: 14px;font-size: 12px;letter-spacing: 0;vertical-align: top;"><%=  video.track.recommend%></span>
+									</li>
 										<%end%>
 								<%end%>		
 							<%end%>
 						<%end%>
 					<%end%>
 				<%end%>	
-			
+						</ul>
+						</div>
+				</div>
 			</div>
 

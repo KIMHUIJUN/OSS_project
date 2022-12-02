@@ -126,7 +126,11 @@
 					</tr>
 				</thead>
 				<tbody>
+					<% a = 1 %>
 					  <% @tracks.each do |track| %>
+					<% if a == 11 %>
+						<%break %>
+					<%end %>
 					<tr style="display: table-row;">
 						<td style="height:84px; border-bottom:1px solid #f2f2f2; text-algin:left; vertical-algin:middle;">
 							<div style = "text-algin: right; margin-top:31px;">
@@ -137,7 +141,9 @@
 						</td>
 						<td style="text-align: left; vertical-align: middle; height:84px; border-bottom:1px solid #f2f2f2;">
 							<div class="atist_id" style="text-align:center;">
-								<span style="display: inline-block;padding-top: 5px;color: #333;font-size: 18px;width: 32px;padding: 0 18px 0 12px;" ><%= track.id%></span>
+								<span style="display: inline-block;padding-top: 5px;color: #333;font-size: 18px;width: 32px;padding: 0 18px 0 12px;" ><%= a %></span>
+								<% a = a +1%>
+								
 							</div>
 						</td>
 						<!-- 순위 변동 -->
