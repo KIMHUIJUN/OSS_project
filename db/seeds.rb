@@ -4,7 +4,8 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)0--
+#   Character.create(name: 'Luke', movie: movies.first)0
+
 Artist.create(agency:"C9엔터테인먼트",nationality:"대한민국",activity_name:"윤하",real_name:"고윤하",sex:"여성", genre:"록/메탈", nickname:"햇병아리, 깡순이, 오리콘 혜성",
 	intro:"윤하는 대한민국의 싱어송라이터이다. 2004년, 첫 싱글 'ゆびきり'로 일본에서의 활동을 시작했고 이듬해 발표한 두 번째 싱글 'ほうき星(혜성)'이 일본 애니메이션 '블리치' 3기의 엔딩곡으로 사용되며 오리콘 주간 차트 15위에 오르는 성과를 거두었다. 일본에서의 성공적인 활동은 국내 데뷔를 이끌었고 2006년 첫 디지털 싱글 'Audition'을 발매하며 국내 주요 아티스트로 거듭났다. 
 	이듬해 첫 정규앨범 [고백하기 좋은 날]을 공개, 타이틀곡 '비밀번호 486'이 대중의 공감을 자아내면서 가창력과 음악적 능력을 인정받았고 그 해 각종 신인상을 거머쥐었다.",
@@ -3937,3 +3938,270 @@ Track.create(title:"남겨짐에 대해 (Feat. 다운)",recommend:"42293",flac:"
 너의 마지막 목소리가 남아있어
 아직도 모든 게 제자리에 남아있어", 
 	album_id:"16",track_play:"THINKING.mp3")
+
+Video.create(link:"https://www.youtube.com/embed/BBdC1rl5sKY",
+	intro:"블랙홀의 경계인 사건의 지평선, 예측되지 않는 이별 그 너머의 이야기를 담았다. 좋았던 날의 안녕과 새로운 시작의 응원을 경쾌한 포크락의 톤에 얹은 모던락으로 어딘가의 아련함을 감출 수 없다. 모든 끝에 시작이 함께하기를 바라는 End Theory의 마침표가 되는 곡.",
+	track_id:"1")
+Video.create(link:"https://www.youtube.com/embed/pyf8cbqyfPs",
+	intro:"두 번째 미니앨범의 타이틀곡으로, 힘든 시간 역시 성장을 위한 자극으로 받아들이고 이를 통해 더 단단해지겠다는 메시지가 담겼다. 무게감 있는 라틴 리듬이 가미된 아프로 라틴(Afro-Latin) 스타일의 팝 장르 곡이다. 생동감 넘치는 사운드와 감각적인 비트, ‘antifragile'이라는 가사를 반복하면서 생기는 중독성이 일품이다. 데뷔 앨범부터 르세라핌과 합을 맞춰 온 방시혁 총괄 프로듀서와 프로듀서팀 13이 곡 작업에 참여했다.",
+	track_id:"2")
+Video.create(link:"https://www.youtube.com/embed/DAEK5GrLb_Y",
+	intro:"뭄바톤(Moombahton)과 일렉트로 팝(ElectroPop)을 결합한 사운드와 독특한 프리 코러스가 매력적이며 각 파트마다 멤버들의 개성 있는 가창이 돋보이는 곡.",
+	track_id:"3")
+Video.create(link:"https://www.youtube.com/embed/fCO7f0SmrDc",
+	intro:"타이틀곡 ‘Nxde’는 모든 사람의 페르소나를 ‘Show’로 표현하고자 오페라 ‘카르멘’의 아리아 ‘하바네라’의 멜로디를 차용한 얼터너티브 팝 장르의 곡으로, 꾸며지지 않은 개인의 본모습을 누드라는 단어에 빗대어 표현하였으며 단어에 대한 외설스러운 시선을 대범하게 비꼬는 가사가 인상적이다. 셔플 리듬의 풍부한 베이스 라인과 직설적인 가사가 어우러져 이목을 집중시키는 것이 한순간도 눈을 뗄 수 없는 뮤지컬 넘버 같기도 하다.
+
+앞서 (여자)아이들은 사랑이라는 감정에 대한 양면성을 표현한 ‘Act’ 콘셉트를 비롯해 할리우드에서 엄청난 사랑을 받았던 마릴린 먼로에게 영감을 얻은 비주얼의 ‘Born’ 콘셉트, 누구에게나 사랑받는 아티스트의 뒷면을 마주한 ‘X-File’ 콘셉트 등의 세 콘셉트 이미지를 연달아 공개하며 앨범에 대한 기대감을 높였다. 더불어 ‘Nxde’ 뮤직비디오는 애니메이션을 활용하여 너무 무겁지 않은 방식으로 메시지를 전달하면서 팬들에게는 색다른 볼거리를 선사한다.",
+	track_id:"4")
+Video.create(link:"https://www.youtube.com/embed/F0B7HDiY-10",
+	intro:"‘After LIKE’는 딥하우스 기반의 세련된 리듬에 클래식하고 개성 강한 훅과 레이, 가을의 파워 있는 랩이 어우러진 곡이다. 사랑 앞에 그 누구보다 솔직하고 당찬 소녀들을 그린 가사로 내가 느끼는 감정들의 주체가 자기 자신임을 잊지 말고 나의 감정에 당당하자는 메시지를 담았다,",
+	track_id:"5")
+Video.create(link:"https://www.youtube.com/embed/LKQ-18LoFQk",intro:"임영웅이 부른 '사랑은 늘 도망가'는 감성 발라더 이문세의 노래로, 어쿠스틱하고 담백한 원곡의 느낌을 최대한 유지하면서도 임영웅만의 감정선이 잘 전달될 수 있도록 작곡가 한밤(midnight)이 새롭게 편곡했다.
+
+특히 연출감독인 신창석 감독이 드라마의 기획 단계부터 리메이크를 염두에 두고 제작 된 드라마 전체를 관통하는 메인 테마곡으로, 미니멀한 반주 위 임영웅만의 감미로운 보컬이 곡을 재해석해 드라마 내에서 음원 일부가 공개된 후 '임영웅표 명품 발라드'가 탄생했다는 평을 받으며 대중의 폭발적인 관심과 발매 요청이 이어지기도 했다.
+
+'사랑은 늘 도망가'는 많은 히트곡을 보유한 작곡가 홍진영과 작사가 강태규가 힘을 합쳐 만든 곡으로, 모든 세대가 공감할 수 있는 노래와 믿고 듣는 임영웅이 만나 드라마에 진한 감동과 위로를 선사할 예정이다.",
+	track_id:"6")
+
+Video.create(link:"https://www.youtube.com/embed/bj2YnbKot0g",intro:"<스트릿 맨 파이터> 계급 미션의 꽃, 리더 계급을 위해 지코와 호미들이 뭉쳤다. 
+‘프레시한 오리지널리티가 있다면 유행과 상관없이 누구보다 빛나는 개성을 갖게 될 것’이라는 
+메시지를 전하는 이 곡은 강렬하면서도 세련된 비트와 댐핑감 넘치는 베이스, 
+듣는 순간 단박에 귀를 사로잡는 훅과 함께 지코 & 호미들의 호흡이 더해져 더욱 인상적인 트랙이다.",track_id:"7")
+
+Video.create(link:"https://www.youtube.com/embed/JPPIrXdocjQ",intro:"이번 앨범에는 발라드, 트로트, 팝, 힙합, 댄스, 포크 등 다채로운 장르의 음악이 한 앨범에 조화로이 어우러져 희망과 위로 그리고 우리의 평범한 삶을 담아 노래하고픈 아티스트 임영웅의 꿈이 담겼다. 
+그리고 이는 임영웅이기에 가능한 [IM HERO]의 오랜 시간 깊게 새겨질 매력이다.",track_id:"8")
+
+Video.create(link:"https://www.youtube.com/embed/CHp0Kaidr14",intro:"Minor와 Major를 오가는 키 체인지만큼이나 두근대는 마음을 당당히 표현한 곡.
+감각적이고 리드미컬한 도입부의 그루브감에 이어, 이에 대비되는 멤버들의 풍성하고 청량한 화음이 담긴 후렴구가 인상적. 오묘한 그루브가 느껴지는 비트가 포인트.
+
+[NewJeans Commentary]
+누군가를 좋아하게 되었다는 마음을 인정하게 됐을 때, 그 마음이랑 같이 온 설렘과 두근거림을 솔직하고 당당하게 받아들이고 ‘나에게 주목(Attention) 해'라고 선언하는 가장 NewJeans 다운 곡이야.",
+	track_id:"9")
+
+Video.create(link:"https://www.youtube.com/embed/PS0qkO5qty0",intro:"This is Crush hour.",track_id:"10")
+
+Video.create(link:"https://www.youtube.com/embed/TqFLIZG_aXA",intro:"끝이라고 생각했던 태양계 권계면, 그 이후에도 보이저호는 나아간다.
+미지의 세계로 출발한 보이저호의 끝은 아직 정해지지 않았다. 우리도 마찬가지.
+EPEX의 참여, C9 유니버스의 비행을 알리는 신호탄일까?
+생소하고 매력적인 컨츄리 기타 사운드와 경쾌하고 화려한 탭댄스가 가슴을 뛰게 하는 컨츄리팝. 아웃트로 기타리프는 거침없는 전진을 연상케 한다.",
+	track_id:"11")
+
+Video.create(link:"https://www.youtube.com/embed/5rB3rv7rpE4",intro:"혜성의 순 우리말인 ‘살별’, 싱코페이션이 가득한 윤하 특유의 팝락으로,
+빠른 템포에 16비트 피아노리프를 덧대어 혜성의 재림을 연상케 한다.
+지지 않고 궤도를 도는 살별은 언젠가 별똥별이 될 운명이라면
+행성에서 지켜볼 누군가의 소원을 들어주길 희망한다.",track_id:"12")
+
+Video.create(link:"https://www.youtube.com/embed/SIUaE6C3GPw",intro:"물처럼 유연하게, 겁 없이 용감하게, 한계 없이 나아가고자 하는 다짐.
+고여 있던 어제를 끝으로 규정하고 안녕을 건넨다.
+미니멀하지만 파워풀한 비트의 포문을 몽환적인 피아노가 열어낸다.
+감각적인 스트링
+사운드와 서정적인 일렉기타가 가미된 오케스트라 팝.
+생동감 있는 윤하 특유의 보이스에 처음으로 보코더가 입혀진 부분도 주목할 만한 포인트다.",track_id:"13")
+
+Video.create(link:"https://www.youtube.com/embed/zWjBIc3Uq3A",intro:"방 안 가득한 눅눅했던 날들을 정리하고, 넓은 세계로 나아간다.
+드디어 반짝, 빛을 낼 시간이 왔다.
+6/8박자 새 출발을 알리는 듯한 벅참을 전해준다. 소울 팝.",track_id:"14")
+
+Video.create(link:"https://www.youtube.com/embed/N6jwTgFA048",intro:"기후위기 시계가 째깍인다.
+지구가 끝을 경고할 때, 우리는 이 시간을 사랑하는 데에 써야 하지 않을까.
+로우파이한 ep와 피아노, 세련된 808베이스와 힙한 스트링 사운드가 곁들여진 RnB 장르로 Sarah kang이 작곡에 참여했다.",track_id:"15")
+
+Video.create(link:"https://www.youtube.com/embed/-fUe-3Q269s",intro:"비가역적인 시간은 끝을 향해 달려간다.
+주어진 시간이 흐른다라면, 기꺼이 과거를 보내고 타임라인에 맞춰 시간에 올라타겠다는 내용.
+일렉기타의 락킹하고 감성적인 선율이 매력적인 멜로딕 퓨처베이스 장르이며, drop에 제목을 풀어 낸 가사로 다짐을 게워낸다.",track_id:"16")
+
+Video.create(link:"https://www.youtube.com/embed/aMWW6HbwcXo",intro:"설레게 했던 계획의 끝에는 실행만이 남아있다. 시간이 더 지나기 전에 동료들과 실행할 것!
+혼자 보다 둘이, 둘 보다 많은 사람들과 함께라면 계획은 완성된다.
+설레는 패드사운드와 강력하고 시원한 신디사이저가 어우러진 일렉트로닉 퓨처 팝.",track_id:"17")
+
+Video.create(link:"https://www.youtube.com/embed/a4WVehZgD2I",intro:"아직도 꿈을 꾸지만, 마지막 숨을 지켜줄 사람 있을까.
+강하게 마음을 먹어도 늘 불안하다.
+클린톤의 일렉기타 사운드가 염세적인 가사를 표현해 준다.
+점점 더 고조되는 드럼과 기타 사운드가 담긴 모던 락",track_id:"18")
+
+Video.create(link:"https://www.youtube.com/embed/QGXZnLJptGQ",intro:"더 나은 선택이라는 게 존재할 수 있을까?
+맞바꾸지 못할 만큼 소중한 것이 생겨간다.
+모두가 별의 조각, 지구의 이방인, 그 조각들이 맞춰질 때
+비로소 빛을 내는 별이 되는게 아닐까.
+윤하의 목소리를 극대화시킨 팝 발라드 장르의 곡으로, 단 4개의 코드만으로 옥타브를 나누어 동일 반복되는 벌스, 코러스가 인상적인 곡이다.
+우주적 공간을 표현하기 위한 수많은 엠비언트 사운드의 트랙들은 MV버전의 인트로에서 더욱 자세히 만나볼 수 있다.",track_id:"19")
+
+Video.create(link:"https://www.youtube.com/embed/-BE2dWKUo70",intro:"닿지 못하고 만질 수 없다 해도, 바라보는 그 자체로 만족할 수 있도록 기도한다.
+성스러운 피아노 아르페지오 리프와 아트모스적인 기타 앰비언트 사운드가 돋보이는 곡.
+리듬악기가 없는 곡의 모양새가 특별하다.
+장장 4분 41초동안 변화해가는 스페이스 오디세이와 웅장한 오케스트레이션을 느낄 수 있는 시네마팝.",track_id:"20")
+
+Video.create(link:"https://www.youtube.com/embed/pmS8kylNdMk",intro:"항성 진화의 최종단계로 한없이 수축하며 우주와 같은 색을 띄어 가는 블랙홀에게 별이었던 순간을 잊지 않겠다 이야기한다. 다음을 기약할 수 없는 끝에서, 영원을 기리며 기억 한 편에 새겨내는 퓨처베이스 팝",
+	track_id:"21")
+
+Video.create(link:"https://www.youtube.com/embed/QU4W0WUPBzM",intro:"불안하고 불완전한 별의 조각을 맞춰주고 하나의 별이 되게 해 준 너라는 구원자에게 부르는 노래.
+끝은 곧 출발임을 알리는 나팔소리로 시작되는 이 곡은, 담담한 어쿠스틱 기타와 어우러지는 하프시코드 연주로 깊이를 더해간다. 특별 할 것 없지만, 마음을 건드리는 멜로디가 돋보이는 미디엄 템포의 포크 팝",
+	track_id:"22")
+
+Video.create(link:"https://www.youtube.com/embed/X88F1CVGd8w",intro:"인연의 끝은 언제나 개운 할 수만은 없지만, 그 과정에 의미가 있다.
+모든 날은 너와 나를 만들었고 그렇게 하루 더 성장한다.
+쓸쓸하지만 밝은 듯한 어쿠스틱 기타와 힘있고 락킹한 기타 사운드가 만감의 교차를 들려준다.
+1절의 스네어를 기점으로 과거의 프레임을 보내주는 것이 인상적",track_id:"23")
+
+Video.create(link:"https://www.youtube.com/embed/ReY8TJsHi8A?controls=0",intro:"인트로 곡 ‘The Hydra'는 볼드한 리듬과 그루브한 베이스 라인이 돋보이는 노래다. 베이스 하우스 장르를 표방하며 한국어, 영어, 일본어 등 3개 국어로 소화한 내레이션이 인상적이다. 르세라핌은 몇 번이고 추락해도 다시 살아나고 더 강해지겠다는 메시지를 전한다. 또한, 이 트랙은 앨범 발매 전 공개된 트레일러 영상의 배경음악으로 삽입돼 컴백에 대한 기대감을 높였다.",
+	track_id:"24")
+
+Video.create(link:"https://www.youtube.com/embed/owtTQSsLpSM?controls=0",
+	intro:"하이브 오리지널 스토리 ‘크림슨 하트'(Crimson Heart)의 테마곡. 힙합 리듬과 감미로운 코드 진행이 조화로운 R&B 곡이며 유려한 멜로디와 르세라핌의 매혹적인 음색이 어우러져 세련된 느낌을 준다. 모험을 하면서 생긴 상처와 새롭게 섞여 들어온 욕망으로 인한 불투명함 모두 내가 견뎌온 시간이 남긴 훈장이자 상징이라고 노래한다. 허윤진은 데뷔 앨범 ‘FEARLESS'에 수록된 ‘크림슨 하트'의 첫 테마곡 ‘Blue Flame'의 크레딧에 이름을 올린 데 이어 이번 곡에도 손길을 더했다.",
+	track_id:"25")
+
+Video.create(link:"https://www.youtube.com/embed/pZyeb5zFQRk?controls=0",intro:"팝 펑크 장르 곡으로 도입부부터 들려오는 강렬한 기타 연주가 귀를 사로잡는다. 천사나 여신 같은 거창한 수식어를 버리고 ‘있는 그대로의 나'로 살아가겠다는 의지를 드러내는 동시에 ‘있는 그대로의 나'를 사랑해 주는 팬들에게 감사를 전한다. 르세라핌은 불필요한 말들이 넘쳐나는 세상에서 우리의 솔직한 목소리를 발견해 줘서 고맙다고 말한다. 허윤진이 곡 작업에 참여해 진정성을 더했다.",
+	track_id:"26")
+
+Video.create(link:"https://www.youtube.com/embed/jJxMlmf58SM?controls=0",intro:"미니멀한 편곡이 돋보이는 소셜 미디어 팝(Social Media Pop) 장르 곡. 사쿠라, 허윤진, 미국의 팝 아티스트 세일럼 일리스(Salem Ilese) 등이 작가진으로 참여했다. 대화하듯 부드럽게 노래를 이어가는 다섯 멤버의 목소리와 편안한 사운드가 귀를 감싼다. 르세라핌은 완벽하지 않은 모습까지 자신의 일부로 받아들이고 초라함을 숨기지 않는 것도 용기라고 말한다.",
+	track_id:"27")
+
+Video.create(link:"https://www.youtube.com/embed/VOmIplFAGeg?controls=0",intro:"미니멀한 힙합 비트를 기반으로 긴장감을 놓치지 않으면서도 별난 자신감이 드러나는 귀여운 가사를 담은 곡.
+통통 튀는 신스와 저지 클럽 스타일 리듬 변주가 독특한 Dance Pop.
+
+[NewJeans Commentary]
+① 다이어트할 때 들으면 얄미워서라도 바로 쿠키 구워 먹고 싶을걸?
+② 나는 너를 너무 좋아하는데…! 먼저 다가와 주면 참 고맙겠다, 다가오게 만들어야지?
+유혹할 만한 뭔가가 필요해! 바로 내 마음을 담은 쿠키야!!",track_id:"28")
+
+Video.create(link:"https://www.youtube.com/embed/tVIXY14aJms?controls=0",intro:"그루비한 드럼 비트에 담백하고 달콤한 보컬이 담긴 아련하면서도 사랑스러운 R&B 트랙.
+Acapella 느낌이 담긴 멤버들의 코러스 가창이 인상적.
+
+[NewJeans Commentary]
+드디어! 우리 앨범의 수록곡이자 마지막 곡이야, 그만큼 앞의 타이틀곡들과 전부 연결이 된달까?
+보통 영화에서 보면 서브 역할의 짝사랑이 제일 뭔가 복잡하고 미묘한 감정처럼 보였어. Hurt는 딱 서브 역할이 하는 짝사랑 같아, 그렇지만 마냥 슬픈 건 아냐!",
+	track_id:"29")
+
+Video.create(link:"https://www.youtube.com/embed/a6Y1GX7wDnA?controls=0",intro:"“네, 물론 지금도 사랑하고 있어요. 지금 사랑하는 사람은… 저예요. (웃음) 제가 사랑은 단 한 명에게만 줄 수 있다고 했잖아요. 정말 수많은 사랑을 했지만 지금 이 사랑이 제일 행복해요.”",
+	track_id:"30")
+
+Video.create(link:"https://www.youtube.com/embed/bjFMG8BT144?controls=0",intro:"“(웃음) 저를 보면 다들 물어보시더라고요. 제 삶은 얼마나 행복하냐고… 맞아요. 모든 걸 다 가진 삶이에요. 그래서 그게 궁금해요. 대체 얼마나 대단한 걸 더 가져야 행복할지.”",
+	track_id:"31")
+
+Video.create(link:"https://www.youtube.com/embed/2X6aKe3XKBs?controls=",intro:"“‘노력으로 안 되는 건 없다.’ 그게 제 좌우명이에요. 저는 그렇게 모든 걸 가졌거든요. 근데 처음으로 무언가를 포기해 봤어요. 아니 포기할 수밖에 없었어요. 노력으로 가질 수 없는 것도 있더라고요.”",
+	track_id:"32")
+
+Video.create(link:"https://www.youtube.com/embed/OliUy7qrzGM?controls=0",intro:"“저는 사랑은 단 한 명에게만 줄 수 있다고 생각해요. 그래서 그 친구에게 다 줬어요. 깎이고 금이 가고 부서져도 나를 잃는 게 그 친구를 잃는 거보다는 안 아팠으니까요.”",
+	track_id:"33")
+
+Video.create(link:"https://www.youtube.com/embed/T91NIKVhn_4?controls=0",intro:"“음… 이 얘기가 나갈 수 있나? 그냥 그때 저는 미쳤었어요. 근데 이성이 감정을 이기면 그걸 사랑이라 말할 수 있나요?”",
+	track_id:"34")
+
+Video.create(link:"https://www.youtube.com/embed/NqQ-76ysbLc?controls=0",intro:"‘My Satisfaction’은 락 감성이 녹아있는 중독성 있는 멜로디가 특징인 팝 펑크 넘버로 다양한 비트 위에 강력한 메탈 사운드와 아이브 멤버들의 인상적인 보컬이 어우러져 압도적인 분위기 자아내고 있다.",
+	track_id:"35")
+
+Video.create(link:"https://www.youtube.com/embed/5dF2NCwxOEs?controls=0",intro:"'사랑은 늘 도망가'는 많은 히트곡을 보유한 작곡가 홍진영과 작사가 강태규가 힘을 합쳐 만든 곡으로, 모든 세대가 공감할 수 있는 노래와 믿고 듣는 임영웅이 만나 드라마에 진한 감동과 위로를 선사할 예정이다.",
+	track_id:"36")
+
+Video.create(link:"https://www.youtube.com/embed/gXlsYv90pag?controls=0",intro:"각기 다른 매력을 가진 <스트릿 맨 파이터> 부리더 계급의 곡으로 
+R&B 힙합 신의 절대적인 존재 ‘윤미래’와 ‘비비’가 참여했다.
+“LAW”는 강렬한 비트를 바탕으로 한 정글테러 스타일의 곡이며, 
+파워풀하고 카리스마 있는 보이스를 가진 윤미래의 리드미컬한 랩과 비비의 도도한 보컬 컬러가 조화롭게 믹스된 곡이다.   
+SMF를 프로듀싱한 Czaer (시저)의 프류듀싱과 EDM씬 에서 핫한 Advanced와 RYS가 작/편곡에 참여했으며,
+그루비한 도입부와 파워풀한 드랍비트 위에 서로 다른 보이스로 조화를 이루어낸 것이 특징이다.",
+	track_id:"37")
+
+Video.create(link:"https://www.youtube.com/embed/vg-MnXQbbDY?controls=0",intro:"오직 춤만 바라보고 노력해 온 <스트릿 맨 파이터>의 미들1 계급 댄서들을 응원하기 위해 프로듀서 GRAY (그레이)와 래퍼 로꼬, 쿠기가 뭉쳤다. 
+지금까지 흘린 땀과 노력의 결실을 향해 열정적으로 나아가는 댄서들의 모습을 리스펙하며 더 성장하길 격려하는 곡으로 
+808 베이스와 플룻 사운드가 조화를 이룬 트랩 장르 기반이 특징이다. 
+GRAY (그레이) 특유의 세련되고 중독성 강한 비트는 물론 그 위에 더해진 로꼬와 쿠기의 속도감 있는 스킬풀한 랩핑을 즐길 수 있다.",
+	track_id:"38")
+
+Video.create(link:"https://www.youtube.com/embed/GTxWaIegjqY",intro:"앞으로 대한민국 댄서 계를 이끌어 갈 <스트릿 맨 파이터> 루키 계급 음원에는 힙합 신의 'Young&Hip' 프로듀서 듀오 그루비룸(GroovyRoom)이 참여했다. 
+이번 미션을 위해 제작한 곡 Whistle에는 마칭 밴드를 보는 듯한 웅장한 느낌의 인트로와 후렴의 중독성 있는 휘파람 소리로 포인트를 주었으며, 
+여기에 식케이 (Sik-K)와 미란이 (Mirani)가 가창으로 참여하여 완성도를 높였다.",
+	track_id:"39")
+
+Video.create(link:"https://www.youtube.com/embed/ss4yWq-nXww",intro:"개성 강한 <스트릿 맨 파이터> 미들2 계급 댄서들의 끓어오르는 열정을 표현한 곡으로 음악이 시작하는 순간부터 끝까지 강렬한 에너지를 느낄 수 있다.
+상상력을 자극하는 와우 포인트들과 강력한 808 베이스라인이 돋보이는 이 곡은 기리보이의 프로듀싱과 함께 YEOHO, tuna.가 작/편곡에 참여했으며 
+YUNHWAY의 매력적인 보컬이 더해져 더욱 세련된 곡으로 탄생했다.",
+	track_id:"40")
+
+Video.create(link:"https://www.youtube.com/embed/jP2J0qnFtV4",intro:"이번 앨범에는 발라드, 트로트, 팝, 힙합, 댄스, 포크 등 다채로운 장르의 음악이 한 앨범에 조화로이 어우러져 희망과 위로 그리고 우리의 평범한 삶을 담아 노래하고픈 아티스트 임영웅의 꿈이 담겼다. 
+그리고 이는 임영웅이기에 가능한 [IM HERO]의 오랜 시간 깊게 새겨질 매력이다.",
+	track_id:"41")
+Video.create(link:"https://www.youtube.com/embed/OpZIaI-J0uk",intro:"이번 앨범에는 발라드, 트로트, 팝, 힙합, 댄스, 포크 등 다채로운 장르의 음악이 한 앨범에 조화로이 어우러져 희망과 위로 그리고 우리의 평범한 삶을 담아 노래하고픈 아티스트 임영웅의 꿈이 담겼다. 
+그리고 이는 임영웅이기에 가능한 [IM HERO]의 오랜 시간 깊게 새겨질 매력이다.",
+	track_id:"42")
+Video.create(link:"https://www.youtube.com/embed/An7ZnTEz40s",intro:"이번 앨범에는 발라드, 트로트, 팝, 힙합, 댄스, 포크 등 다채로운 장르의 음악이 한 앨범에 조화로이 어우러져 희망과 위로 그리고 우리의 평범한 삶을 담아 노래하고픈 아티스트 임영웅의 꿈이 담겼다. 
+그리고 이는 임영웅이기에 가능한 [IM HERO]의 오랜 시간 깊게 새겨질 매력이다.",
+	track_id:"43")
+
+Video.create(link:"https://www.youtube.com/embed/zLFypmn42NE",intro:"이번 앨범에는 발라드, 트로트, 팝, 힙합, 댄스, 포크 등 다채로운 장르의 음악이 한 앨범에 조화로이 어우러져 희망과 위로 그리고 우리의 평범한 삶을 담아 노래하고픈 아티스트 임영웅의 꿈이 담겼다. 
+그리고 이는 임영웅이기에 가능한 [IM HERO]의 오랜 시간 깊게 새겨질 매력이다.",
+	track_id:"44")
+Video.create(link:"https://www.youtube.com/embed/PNp1csXe5NE",intro:"이번 앨범에는 발라드, 트로트, 팝, 힙합, 댄스, 포크 등 다채로운 장르의 음악이 한 앨범에 조화로이 어우러져 희망과 위로 그리고 우리의 평범한 삶을 담아 노래하고픈 아티스트 임영웅의 꿈이 담겼다. 
+그리고 이는 임영웅이기에 가능한 [IM HERO]의 오랜 시간 깊게 새겨질 매력이다.",track_id:"45")
+
+Video.create(link:"https://www.youtube.com/embed/LLkAsu5XTkk",intro:"이번 앨범에는 발라드, 트로트, 팝, 힙합, 댄스, 포크 등 다채로운 장르의 음악이 한 앨범에 조화로이 어우러져 희망과 위로 그리고 우리의 평범한 삶을 담아 노래하고픈 아티스트 임영웅의 꿈이 담겼다. 
+그리고 이는 임영웅이기에 가능한 [IM HERO]의 오랜 시간 깊게 새겨질 매력이다.",
+	track_id:"46")
+Video.create(link:"https://www.youtube.com/embed/CbhiBN5wpCc",intro:"이번 앨범에는 발라드, 트로트, 팝, 힙합, 댄스, 포크 등 다채로운 장르의 음악이 한 앨범에 조화로이 어우러져 희망과 위로 그리고 우리의 평범한 삶을 담아 노래하고픈 아티스트 임영웅의 꿈이 담겼다. 
+그리고 이는 임영웅이기에 가능한 [IM HERO]의 오랜 시간 깊게 새겨질 매력이다.",track_id:"47")
+
+Video.create(link:"https://www.youtube.com/embed/P2FcQvCbDWg",intro:"이번 앨범에는 발라드, 트로트, 팝, 힙합, 댄스, 포크 등 다채로운 장르의 음악이 한 앨범에 조화로이 어우러져 희망과 위로 그리고 우리의 평범한 삶을 담아 노래하고픈 아티스트 임영웅의 꿈이 담겼다. 
+그리고 이는 임영웅이기에 가능한 [IM HERO]의 오랜 시간 깊게 새겨질 매력이다.",
+	track_id:"48")
+
+Video.create(link:"https://www.youtube.com/embed/cntOC73YPEU",intro:"이번 앨범에는 발라드, 트로트, 팝, 힙합, 댄스, 포크 등 다채로운 장르의 음악이 한 앨범에 조화로이 어우러져 희망과 위로 그리고 우리의 평범한 삶을 담아 노래하고픈 아티스트 임영웅의 꿈이 담겼다. 
+그리고 이는 임영웅이기에 가능한 [IM HERO]의 오랜 시간 깊게 새겨질 매력이다.",
+	track_id:"49")
+Video.create(link:"https://www.youtube.com/embed/cXHduPVrcDQ",intro:"이번 앨범에는 발라드, 트로트, 팝, 힙합, 댄스, 포크 등 다채로운 장르의 음악이 한 앨범에 조화로이 어우러져 희망과 위로 그리고 우리의 평범한 삶을 담아 노래하고픈 아티스트 임영웅의 꿈이 담겼다. 
+그리고 이는 임영웅이기에 가능한 [IM HERO]의 오랜 시간 깊게 새겨질 매력이다.",
+	track_id:"50")
+Video.create(link:"https://www.youtube.com/embed/OcCkAG_LO9Y",intro:"STABLE MINDSET에 이은 UNSTABLE MINDSET
+ 
+먹구름 뒤에 비가 내리지만 뒤바뀐 순서
+ 
+남들과는 조금 다른 순서로 살고 있는 화자의 성장에 대한 이야기
+ 
+중심을 잡기위해 최대한 집중할 때 보여지는 외연은 가장 불안정하다.",
+	track_id:"51")
+
+Video.create(link:"https://www.youtube.com/embed/hrO-BgLjJ-Q",intro:"STABLE MINDSET에 이은 UNSTABLE MINDSET
+ 
+먹구름 뒤에 비가 내리지만 뒤바뀐 순서
+ 
+남들과는 조금 다른 순서로 살고 있는 화자의 성장에 대한 이야기
+ 
+ 
+중심을 잡기위해 최대한 집중할 때 보여지는 외연은 가장 불안정하다.",
+	track_id:"52")
+
+Video.create(link:"https://www.youtube.com/embed/5ISJHAt6mJs",intro:"‘Lonely’는 누군가를 많이 사랑했었던, 그리고 외롭고 아팠던 추억들까지 간직하고 싶은 순수한 마음을 표현한 곡이다.",
+	track_id:"53")
+
+Video.create(link:"https://www.youtube.com/embed/gWHgpJ3m-x8",intro:"이별에 마주한 서로를 그리워하는 곡으로, 이별 후에 흘리는 눈물을 ‘비’에 비유함으로써 윤하만의 애절한 감성을 느낄 수 있는 발라드 곡이다.",
+	track_id:"54")
+
+Video.create(link:"https://www.youtube.com/embed/Aay8hrudG1o",intro:"“뭘 봐, 네가 뭐라 하든 안 무섭거든. 결국 내가 이길 거야”
+데뷔 앨범의 타이틀곡. 볼드한 베이스 리프와 그루브 있는 리듬이 조화를 이룬 펑크 기반의 얼터너티브 팝 장르의 곡이다. “욕심을 숨기라는 네 말들은 이상해, 겸손한 연기 같은 건 더 이상 안 해” 같은 가사를 통해 과거에 연연하지 않고 두려움 없이 미래를 향해 나아가겠다는 포부를 표현했다. 방시혁 총괄 프로듀서가 작사와 프로듀싱에 참여했고, 방탄소년단의 ‘Life goes on'을 작업한 싱어송라이터 블러쉬(BLVSH)와 미국 유명 팝 아티스트 데스티니 로저스(Destiny Rogers)가 곡 작업에 참여했다.",
+	track_id:"55")
+
+Video.create(link:"https://www.youtube.com/embed/lhIhbqz9fME",intro:"“마음 속 푸른 불꽃이 나를 불러”
+하이브 오리지널 스토리 ‘Crimson Heart'의 테마곡으로, 멤버 김채원과 허윤진이 작사에 참여했다. 욕망을 상징하는 ‘푸른 반딧불이'를 따라 마법의 황야인 ‘UNKNOWN'으로 향하는 여섯 멤버의 이야기를 다룬다. 세련되면서도 유려한 멜로디가 신비로운 분위기를 자아내는 디스코-펑크 스타일의 곡이다.",
+	track_id:"56")
+
+Video.create(link:"https://www.youtube.com/embed/MfSKSo9Oz44",intro:"타이틀곡 ‘TOMBOY’는 (여자)아이들 특유의 당당한 애티튜드가 마음껏 드러나는 곡으로, “I’m not a doll”, “Just me I-DLE”과 같은 직설적인 가사가 듣는 이로 하여금 통제 불가능한 괴짜 캐릭터를 떠올리게 하며 한층 과감한 매력을 선사한다. 아울러 (여자)아이들의 유니크한 보이스와 거칠고 웅장한 악기 사운드가 어우러진 훅, 분위기가 고조된 순간 흘러나오는 중독성 넘치는 변주 구간 또한 이 곡의 관전 포인트다.",
+	track_id:"57")
+
+Video.create(link:"https://www.youtube.com/embed/DBvpYum2zeg",intro:"이 가방 안에는 5개의 붉은색 다이아몬드가 있다.",
+	track_id:"58")
+
+Video.create(link:"https://www.youtube.com/embed/SuMnpTc8zoU",intro:"살고 싶은 대로 살 거다. 후회도 내 몫이다.",
+	track_id:"59")
+
+Video.create(link:"https://www.youtube.com/embed/Y8JFxS1HlDo",intro:"중독성 있는 후렴구와 퍼커션 사운드가 주를 이룬 다크 모던 팝 장르의 곡이다.
+파워풀한 트랙 위에 저음과 고음을 오가는 에너제틱 한 탑라인이 곡의 다채로운 분위기를 담아냈으며, 하나의 컬러로 정의할 수 없는 아이브의 다채로운 매력을 음악이라는 장르에 담고 자기애를 과시하듯 ‘주체성’이라는 통일된 메시지를 외친다.
+기승전결에 따라 분위기가 혼합돼 파트마다 반전의 느낌을 주는 아이브 고유의 컬러가 강조된 곡이다. '직접 들어와 두 눈으로 확인해' '내 맘 가장 깊은 데로 오면 돼' '망설일 시간은 3초면 되는 걸’ 원하면 감히 뛰어들어' 등 사랑할 용기가 있다면 언제든지 뛰어들어보라는 당당한 매력이 주체적인 노랫말 속에 고스란히 담겨있으며, 새로운 시대의 큐피드를 재해석한 가사 등이 'Z세대 워너비' 아이브의 비주얼과 퍼포먼스에 더욱 힘을 실어준다.",
+	track_id:"60")
+
+Video.create(link:"https://www.youtube.com/embed/EE9lYIS7hus",intro:"아이브의 화려함과 세련함을 표현한 팝 댄스곡. 그루비하고 펑키한 하우스 타입의 베이스라인은 패션쇼의 캣워크를 뽐내는 듯한 느낌을 주고, 매끄럽고 소울풀한 신스 사운드는 우아함과 강렬한 에너지를 뒷받침하고 있다. 처음으로 ‘가을’, ‘레이’가 랩 메이킹에 참여, 당당하고 거침없는 모습을 담아내 아이브의 또 다른 매력을 볼 수 있는 곡이다.",
+	track_id:"61")
+
+Video.create(link:"https://www.youtube.com/embed/UuV2BmJ1p_I",intro:"아무 노래나 틀어봐",track_id:"62")
+
+Video.create(link:"https://www.youtube.com/embed/j7_UBbiMr34",intro:"묵직한 808베이스, 미니멀한 플루트 라인과 카우벨의 조화가 특징인 트랩 곡. 감정적이고 섬세한 이야기를 다룬 THINKING 앨범 다수의 곡들 과는 달리 'another level' 속 지코는 형식에 구애받지 않고 직관적 가사를 유연하게 내뱉는다. 오랜 친구이자 같은 크루 팬시차일드의 멤버인 페노메코의 수준급 훅메이킹이 더해져 곡의 완성도를 높였다.",
+	track_id:"63")
+Video.create(link:"https://www.youtube.com/embed/Hk_fTyey11I",intro:"헤어진 이후 모든 게 멈춰버린 삶. 사랑하는 대상으로부터 남겨진 이는 누군가에게 특별했었던 만큼 보잘것없어지기 마련이다. 따듯한 아르페지오 선율 위 낮고 잔잔한 보이스와 먹먹한 노랫말을 통해 지코는 그리움에 몸서리치는 한 사람을 그려내고 있다. 어딘가 계속 반복되는 느낌이지만 감정선에 따라 조금씩 변화하는 가사와 편곡에서 그의 세심한 의도를 엿볼 수 있다. 지코가 최근 가장 눈여겨보는 신예 아티스트 다운의 퓨어한 음색 또한 주목할 만한 점.",
+	track_id:"64")
