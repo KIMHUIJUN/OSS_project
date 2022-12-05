@@ -5,6 +5,9 @@ class PlayListsController < ApplicationController
   def index
     @play_lists = PlayList.all
 	@my_play_lists = PlayList.where(user_id: current_user.id)
+	  if user_signed_in? 
+		@pay_t = Payuser.where(user_id: current_user.id).size > 0
+		end
 	
   end
 
