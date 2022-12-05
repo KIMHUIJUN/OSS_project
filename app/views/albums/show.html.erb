@@ -219,7 +219,7 @@
 					
 				</div>
 					<div class="service_video_list">	
-						<ul style="margin: 0 0 0 -20px;display: block; height:195px; overflow:hidden;">
+						<ul style="margin: 0 0 0 -20px;display: blockpx; overflow:hidden;">
 			<% @videos.each do |video| %>
 				
 					<% @tracks.each do |track| %>
@@ -256,32 +256,17 @@
 			</div>
 				<div class="page" style="position: absolute;top: 4px;right: 0;">
 					<span style="display: inline-block;margin-left: 3px;vertical-align: middle;">
-					<a href="javascript:;" style="float: left;margin-right: -1px;position: relative;width: 23px;height: 23px;border: 1px solid #ccc;" class="btn page_prev disabled d_btn_page">
+					<a href="javascript:;" style="float: left;margin-right: -1px;position: relative;width: 23px;height: 23px;border: 1px solid #ccc;" >
 					<span style="top: 50%;left: 50%;width: 7px;height: 11px;margin: -6px 0 0 -3px;display: block;position: relative;
 background: url(//cdnimg.melon.co.kr/resource/image/web/common/button_icons_sprite_20200521.png) no-repeat -459px 0;font-size: 0;line-height: 0;background-position: -459px -14px;">이전</span>
 					</a>
-					<a href="javascript:;" style="position: relative;width: 23px;height: 23px;border: 1px solid #ccc;float: left;margin-right: 0;" class="btn page_prev disabled d_btn_page">
+					<a href="javascript:;" style="position: relative;width: 23px;height: 23px;border: 1px solid #ccc;float: left;margin-right: 0;">
 					<span style="top: 50%;left: 50%;width: 7px;height: 11px;margin: -6px 0 0 -3px;display: block;position: relative;
 background: url(//cdnimg.melon.co.kr/resource/image/web/common/button_icons_sprite_20200521.png) no-repeat -459px 0;font-size: 0;line-height: 0;background-position: -469px -14px;">다음</span>
 					</a>
 						</span>
 				</div>
 		</div>
-			<script>
-					$('.d_btn_page').click(function(){
-
-						if(!$(this).hasClass('disabled')){
-							var pageNo = '2';
-							$.ajax({
-								url: "/video/video_relationvideo.htm",
-								data : {mvId : '50247789', pageNo : pageNo}
-							}).done(function(html){
-								$('#divrelactionvideo').html(html);
-							});	
-						}
-
-					});
-			</script>
 		</div>
 			
 			<% if user_signed_in? %>

@@ -5,15 +5,16 @@
 <h2 style="color: #1a1a1a; font-weight: bold;font-size: 24px;line-height: 30px; font-family:'Malgun Gothic'; padding-bottom:25px;">
 	마이뮤직
 			</h2>
-			  <div class="field" style="width:612px; height:130px;">
+			  <div class="field" style="width:100%; height:130px; background:#f3f3f3;">
 				  <div style="float:left; width:250px;">
-			<img style="position: relative;display: block;width: 98px;height: 98px; float:left;" src="<%= current_user.profile_img%>">
-	  <span style="font-size: 23px;color:#1a1a1a;font-weight: 500;line-height: 30px; margin-left:15px;"><%= current_user.name %>님</span>
+			<img style="position: relative;display: block;width: 98px;height: 98px; float:left; padding:15px 22px;" src="<%= current_user.profile_img%>">
+	  <p style="font-size: 23px;color: #1a1a1a;margin-top:20px;"><%= current_user.name %>님
 			<% if @pay_t%>
-				<p style="float:left;display: inline-block;width: auto;max-width: 190px;white-space: nowrap;">스트리밍클럽 사용중</p>
+				<p style=" margin-bottom:0; font-size:15px; margin-top:10px;">스트리밍클럽 사용중</p>
 				<% else%>
-				<p style="width: auto; max-width:183px; padding-left:115px;">결제 후 이용 가능</p>
+				<p style="margin-bottom:0; font-size:15px; margin-top:10px;">결제 후 이용 가능</p>
 				<%end%>
+			</p>
 				</div>
 			</div>
 			<div class="user_info">
